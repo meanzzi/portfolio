@@ -10,6 +10,29 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "SchoolSafetyRoundedSmile";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
 body {
   @apply font-sans;
+}
+
+@layer utilities {
+  .perspective {
+    perspective: 1000px;
+  }
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
 }

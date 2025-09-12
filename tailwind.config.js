@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Pretendard", "sans-serif"],
+        school: ["SchoolSafetyRoundedSmile", "sans-serif"],
+        sora: ["Sora", "serif"],
       },
     },
   },

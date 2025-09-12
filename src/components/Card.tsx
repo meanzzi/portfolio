@@ -1,8 +1,27 @@
-const Card = () => {
+interface CardProps {
+  img: string;
+  alt: string;
+  name: string;
+  tag: string;
+  date: string;
+  description: string;
+}
+
+const Card = ({ img, alt, name, tag, date, description }: CardProps) => {
   return (
     <div>
-      <div className="w-[25rem] h-[25rem] rounded-[1rem] shadow-lg">
-        프로젝트 카드
+      <div className="w-[25rem] h-[25rem] rounded-[1rem] shadow-lg p-[1rem] cursor-pointer">
+        <div className="my-[1rem] w-full h-[15rem] overflow-hidden">
+          <img src={img} alt={alt} className="object-cover" />
+        </div>
+        <div className="flex justify-between">
+          <div className="font-bold text-[1.4rem]">{name}</div>
+          <div className="w-[4rem] h-[1.3rem] bg-[#6274A1] rounded-lg text-white flex items-center justify-center text-[1rem] mr-[0.5rem]">
+            {tag}
+          </div>
+        </div>
+        <div className="text-gray-500">{date}</div>
+        <div>{description}</div>
       </div>
     </div>
   );

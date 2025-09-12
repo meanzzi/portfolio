@@ -6,13 +6,18 @@ import Skill from "./Skill";
 
 const MainPage = () => {
   return (
-    // 마진 더 줘야할듯?, profile 내용 늘리기
-    <div className="">
-      <Header />
-      <Profile />
-      <Skill />
-      <Project />
-      <Contact />
+    <div className="bg-[#679258] p-[2rem]">
+      <div className="bg-white rounded-[1rem]">
+        <Header />
+        <div className="mx-[8rem] my-[5rem]">
+          <Profile />
+        </div>
+        <div className="mx-[6rem]">
+          <Skill />
+        </div>
+        <Project />
+        <Contact />
+      </div>
     </div>
   );
 };
