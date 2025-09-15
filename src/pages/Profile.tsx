@@ -23,8 +23,19 @@ const Profile = () => {
           />
           <div className="ml-[3rem] my-[5rem]">
             <div className="font-sora text-[3rem] text-[#679258]">About Me</div>
-            <div className="mt-[2rem]">
-              <p>안녕하세요! 프론트엔드 개발자 김민지입니다.</p>
+            <div className="mt-[2rem] text-[1.5rem] mr-[2rem]">
+              <div>
+                안녕하세요! 코드를 통해 사람들과 세상을 연결하는 프론트엔드
+                개발자 김민지입니다. <br />
+                항상 새로운 기술을 배우고, 더 나은 사용자 경험을 만들기 위해
+                끊임없이 노력하고 있어요. <br />
+              </div>
+              <div>
+                개발 과정에서 마주하는 크고 작은 문제들을 해결하고, 끊임없이
+                배우며 성장하는 데서 큰 즐거움과 열정을 느낍니다! <br />
+                혼자보다는 함께 만들어가는 가치를 믿기에 동료들과 적극적으로
+                소통하고 아이디어를 나누는 것을 가장 중요하게 생각합니다.
+              </div>
             </div>
           </div>
         </div>
