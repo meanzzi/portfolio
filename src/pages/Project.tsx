@@ -1,6 +1,3 @@
-// import Card from "../components/Card";
-// import gt from "../assets/gt.png";
-// import beour from "../assets/beour.png";
 import ProjectCardList from "../components/ProjectCardList";
 
 const Project = () => {

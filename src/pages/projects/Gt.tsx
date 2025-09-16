@@ -1,0 +1,182 @@
+import { useState } from "react";
+import Accordion from "../../components/Accordion";
+
+import back from "../../assets/back.svg";
+import reactlogo from "../../assets/React.svg";
+import jslogo from "../../assets/JavaScript.svg";
+import gitgray from "../../assets/github_gray.svg";
+import notion from "../../assets/notion.svg";
+import figma from "../../assets/figma.svg";
+import gt_video from "../../assets/gt_video.mp4";
+import { useNavigate } from "react-router-dom";
+import { BsFillLightningFill } from "react-icons/bs";
+import { IoMdLeaf } from "react-icons/io";
+import { FaLightbulb } from "react-icons/fa6";
+import { PiPencilSimpleFill } from "react-icons/pi";
+import { RiTreeFill } from "react-icons/ri";
+
+const Gt = () => {
+  const nav = useNavigate();
+  const [showIframe, setShowIframe] = useState(false);
+
+  return (
+    <div>
+      <div className="px-[3rem] pt-[4rem] flex items-center justify-between">
+        <div className="flex items-center">
+          <img
+            src={back}
+            onClick={() => nav(-1)}
+            className="cursor-pointer w-[2.3rem]"
+          />
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="text-[2.4rem] font-bold mr-[1rem]">신뢰장터</div>
+          <img src={reactlogo} className="w-[1.5rem]" />
+          <img src={jslogo} className="w-[1.5rem]" />
+        </div>
+
+        <div className="w-[2rem]"></div>
+      </div>
+
+      <div className="text-center text-[#A4A4A4] text-[1.3rem]">
+        2024-03 ~ 2024-11
+      </div>
+      <div className="mx-[6rem] my-[2rem] text-[#303030] text-[1.3rem]">
+        C2C 중고 물품의 가격을 예측하고 시각적으로 추천 범위를 제공하는 웹
+        서비스입니다. <br />
+        머신러닝 모델을 활용하여 입력된 상품의 상태와 카테고리를 기반으로
+        합리적인 가격을 예측하고, 이를 직관적인 UI로 시각화하여 사용자 신뢰를
+        높이고 거래를 활성화하는 데 목적을 두었습니다.
+      </div>
+
+      <div className="mx-[6rem] text-[1.3rem]">
+        <div className="flex items-center gap-[2rem]">
+          <p>참여 인원</p>
+          <p className="text-[#3D3D3D]">4명 (FE 1, BE 2, ML 1)</p>
+        </div>
+        <div className="flex items-start gap-[2rem] my-[1rem]">
+          <p>관련 링크</p>
+          <img
+            src={gitgray}
+            className="cursor-pointer w-[1.8rem]"
+            onClick={() =>
+              window.open("https://github.com/PG1tHub/Graduated_Task", "_blank")
+            }
+          />
+        </div>
+        <div className="flex items-start gap-[2rem]">
+          <p>주요 기능</p>
+          <ul className="text-[#3D3D3D] list-disc pl-5 m-0 leading-[2.2rem]">
+            <li>머신러닝 기반 상품 가격 예측 및 추천</li>
+            <li>직관적인 상품 검색 및 필터링</li>
+            <li>안정적인 상품 등록 및 관리</li>
+            <li>JWT 기반 사용자 인증 및 권한 관리</li>
+          </ul>
+        </div>
+      </div>
+      <hr className="mx-[6rem] border-t-1 border-gray-300 my-[3rem]" />
+
+      <div className="mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+          <IoMdLeaf />
+          담당 역할 및 기여
+        </div>
+
+        <ul className="list-disc pl-5 m-0 leading-[2.7rem] text-[1.3rem] text-[#303030] marker:text-[#679258]">
+          <li>프론트엔드 개발 담당 (UI/UX 설계 및 구현 전반)</li>
+          <li>데이터 수집·가공 참여, 머신러닝 모델 개발 방향 제시</li>
+          <li>백엔드 및 머신러닝 API 연동, 데이터 흐름·통신 조율</li>
+          <li>
+            Git 기반 버전 관리 및 코드 리뷰 참여, Google Sheets로 API 명세 및
+            일정 관리
+          </li>
+        </ul>
+      </div>
+
+      <div className="mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+          <FaLightbulb />
+          주요 기능 상세 구현
+        </div>
+        <Accordion
+          items={[
+            {
+              title: "머신러닝 기반 가격 추천 시스템 연동",
+              content:
+                "상품 상태와 카테고리를 입력받아, 머신러닝 모델의 API와 연동하여 실시간으로 예측 가격 범위를 제공합니다. React에서 useState와 비동기 API 호출을 활용하여 가격 범위를 슬라이더로 시각화하고, 입력 가격의 적절성을 즉각 피드백하여 사용자 신뢰도를 높였습니다.",
+            },
+            {
+              title: "상품 등록 및 이미지 관리",
+              content:
+                "FileReader API를 통해 업로드된 이미지를 즉시 미리보기하며, localStorage를 사용해 새로 고침 시에도 임시 저장을 유지했습니다. JWT 토큰을 Authorization 헤더에 포함시켜 인증된 상태로 fetch API를 통해 상품 등록 요청을 보내고, 머신러닝 추천 가격과 비교해 시각적 피드백을 제공하여 사용자의 합리적 가격 설정을 지원했습니다.",
+            },
+            {
+              title: "다양한 상품 정보 탐색",
+              content:
+                "컴포넌트 마운트 시 axios와 useEffect를 활용해 상품 데이터를 비동기 호출하며, useState로 로딩 및 에러 상태를 관리했습니다. useParams로 URL에서 상품 ID를 추출해 상세 정보를 요청하고, 클라이언트 측 필터링과 가격 추천 범위 내 상품에 시각적 체크 아이콘 표시로 사용자 편의를 극대화했습니다. 또한, localStorage에 저장된 이미지를 불러와 상세 페이지에 렌더링하며 사용자 경험을 향상시켰습니다.",
+            },
+          ]}
+        />
+      </div>
+
+      <div className="mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+          <BsFillLightningFill />
+          트러블 슈팅
+        </div>
+        <div>내용</div>
+      </div>
+
+      <div className="mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+          <RiTreeFill />
+          결과 화면
+        </div>
+        <video
+          src={gt_video}
+          controls
+          className="w-full h-[450px] rounded-xl border"
+        />
+      </div>
+
+      <div className="mx-[6rem] mt-[2rem] pb-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+          <PiPencilSimpleFill />
+          기획 자료
+        </div>
+        <div className="flex items-center gap-3">
+          <img
+            src={notion}
+            alt="노션"
+            className="cursor-pointer w-[3rem]"
+            onClick={() =>
+              window.open(
+                "https://www.notion.so/2325a4dbd5e480b08bb7e6d5067b1c5b",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          />
+          <img
+            src={figma}
+            alt="피그마"
+            className="cursor-pointer w-[4rem]"
+            onClick={() => setShowIframe((prev) => !prev)}
+          />
+        </div>
+
+        {showIframe && (
+          <div className="w-full h-[40rem] rounded-xl overflow-hidden mb-[2rem] border">
+            <iframe
+              src="https://embed.figma.com/design/YLuwUZKGne2PvO8HilCw54/GT?node-id=0-1&embed-host=share"
+              className="w-full h-full"
+              allowFullScreen
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+export default Gt;
