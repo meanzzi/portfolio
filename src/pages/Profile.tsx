@@ -2,7 +2,10 @@ import minji from "../assets/minji.jpg";
 
 const Profile = () => {
   return (
-    <div className="w-full h-[40rem] bg-[#F2F2F2] rounded-xl shadow-2xl flex flex-col">
+    <div
+      id="about"
+      className="w-full h-[40rem] bg-[#F2F2F2] rounded-xl shadow-2xl flex flex-col"
+    >
       <div className="flex items-center p-3">
         <div className="px-1">
           <span className="w-4 h-4 rounded-full inline-block bg-red-500 "></span>
@@ -14,6 +17,7 @@ const Profile = () => {
           <span className="w-4 h-4 rounded-full inline-block bg-green-500 "></span>
         </div>
       </div>
+
       <div className="flex-1 overflow-auto">
         <div className="flex">
           <img

@@ -125,7 +125,94 @@ const Gt = () => {
           <BsFillLightningFill />
           트러블 슈팅
         </div>
-        <div>내용</div>
+        <Accordion
+          items={[
+            {
+              title: "JWT 토큰 유효성 관리 및 사용자 접근 제어",
+              content: (
+                <div className="text-[#303030]">
+                  <div className="">
+                    <p className="text-[#000000]">문제 상황</p>
+                    <p>
+                      페이지 새로고침 시 로그인 상태가 유실되고, 만료된 토큰으로
+                      불필요한 API 요청이 발생했습니다.
+                    </p>
+                  </div>
+
+                  <div className="my-[1.5rem]">
+                    <p className="text-[#000000]">해결 과정</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        토큰 유효성 검사 함수 구현 → sessionStorage와 만료시간
+                        체크
+                      </li>
+                      <li>
+                        axios 인터셉터 설정 → 모든 요청에 JWT 자동 추가, 401
+                        발생 시 자동 로그아웃
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-[#000000]">결과 및 배운 점</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>새로고침 시 로그인 유지, 만료 토큰 자동 로그아웃</li>
+                      <li>프론트엔드에서 인증/인가 상태 관리 중요성 이해</li>
+                    </ul>
+                  </div>
+                </div>
+              ),
+            },
+            {
+              title: "FormData 기반 안정적인 이미지 업로드 및 미리보기",
+              content: (
+                <div className="text-[#303030]">
+                  <div className="">
+                    <p className="text-[#000000]">문제 상황</p>
+                    <p>
+                      상품 등록 시 이미지를 Base64로 변환해 JSON에 포함시키는
+                      방식으로 전송했는데, 대용량 이미지에서 전송 실패와 성능
+                      저하 문제가 발생했습니다.
+                    </p>
+                  </div>
+
+                  <div className="my-[1.5rem]">
+                    <p className="text-[#000000]">해결 과정</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        FormData 객체 사용: 이미지 전송을 multipart/form-data로
+                        변경하여 대용량 파일 처리 효율 향상
+                      </li>
+                      <li>
+                        이미지 미리보기 최적화: URL.createObjectURL로 즉시
+                        미리보기 제공, 실제 서버 전송 시만 File 객체 사용
+                      </li>
+                      <li>
+                        백엔드와의 협의: AWS S3에 이미지 저장, DB에는 URL만
+                        저장하는 구조 설계
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-[#000000]">결과 및 배운 점</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        안정적이고 효율적인 이미지 업로드 구현으로 사용자 경험
+                        개선
+                      </li>
+                      <li>FormData 및 미리보기 최적화에 대한 이해 강화</li>
+                      <li>
+                        프론트·백엔드 연동 과정에서 발생 가능한 문제 해결 능력
+                        향상
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              ),
+            },
+          ]}
+        />
       </div>
 
       <div className="mx-[6rem] my-[2rem]">

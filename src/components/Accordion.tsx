@@ -1,8 +1,10 @@
 import { useState, useRef } from "react";
+import type { ReactNode } from "react";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 interface AcdItem {
   title: string;
-  content: string;
+  content: string | ReactNode;
 }
 
 interface AccordionProps {
@@ -54,7 +56,7 @@ const Accordion = ({ items }: AccordionProps) => {
               className="absolute top-4 right-4 w-8 h-8 flex justify-center items-center rounded-full text-xl focus:outline-none"
               onClick={() => toggle(index)}
             >
-              {isActive ? "-" : "+"}
+              {isActive ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
             </button>
           </li>
         );

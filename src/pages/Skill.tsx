@@ -15,7 +15,7 @@ import NodeJs from "../assets/Node.js.svg";
 
 const Skill = () => {
   return (
-    <div>
+    <div id="skills">
       <div className="font-sora text-[3rem] text-center mt-[5rem] mb-[6rem] text-[#679258]">
         SKILLS
       </div>

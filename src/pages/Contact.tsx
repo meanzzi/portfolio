@@ -3,7 +3,7 @@ import email_line from "../assets/email_line.svg";
 
 const Contact = () => {
   return (
-    <div className="mt-[5rem] mx-[6rem] pb-[5rem]">
+    <div id="contact" className="mt-[5rem] mx-[6rem] pb-[5rem]">
       <div className="font-sora text-[3rem] text-center mb-[3rem] text-[#679258]">
         CONTACT
       </div>

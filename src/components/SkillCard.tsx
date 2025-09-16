@@ -16,6 +16,10 @@ const SkillCard = ({ img, alt, description }: SkillCardProps) => {
           {description}
         </div>
       </div>
+
+      <span className="absolute -top-6 left-1/2 -translate-x-1/2 px-2 py-1 text-xs bg-black text-white rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        {alt}
+      </span>
     </div>
   );
 };
