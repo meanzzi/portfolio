@@ -7,10 +7,12 @@ import jslogo from "../../assets/JavaScript.svg";
 import gitgray from "../../assets/github_gray.svg";
 import notion from "../../assets/notion.svg";
 import figma from "../../assets/figma.svg";
+import pdf from "../../assets/pdf.svg";
 import gt_video from "../../assets/gt_video.mp4";
 import gt_1 from "../../assets/gt_1.png";
 import gt_2 from "../../assets/gt_2.png";
 import gt_3 from "../../assets/gt_3.jpg";
+import gt_ppt from "../../assets/gt_ppt.pdf";
 
 import { useNavigate } from "react-router-dom";
 import { BsFillLightningFill } from "react-icons/bs";
@@ -21,7 +23,8 @@ import { RiTreeFill } from "react-icons/ri";
 
 const Gt = () => {
   const nav = useNavigate();
-  const [showIframe, setShowIframe] = useState(false);
+  const [showFigma, setShowFigma] = useState(false);
+  const [showPDF, setShowPDF] = useState(false);
 
   return (
     <div>
@@ -254,7 +257,7 @@ const Gt = () => {
         <video
           src={gt_video}
           controls
-          className="w-full h-[450px] rounded-xl border"
+          className="w-full h-[450px] rounded-xl"
         />
       </div>
 
@@ -280,16 +283,33 @@ const Gt = () => {
             src={figma}
             alt="피그마"
             className="cursor-pointer w-[4rem]"
-            onClick={() => setShowIframe((prev) => !prev)}
+            onClick={() => setShowFigma((prev) => !prev)}
+          />
+          <img
+            src={pdf}
+            alt="pdf"
+            className="cursor-pointer w-[2.6rem]"
+            onClick={() => setShowPDF((prev) => !prev)}
           />
         </div>
 
-        {showIframe && (
-          <div className="w-full h-[40rem] rounded-xl overflow-hidden mb-[2rem] border">
+        {showFigma && (
+          <div className="w-full h-[40rem] rounded-xl overflow-hidden mt-[2rem]">
             <iframe
               src="https://embed.figma.com/design/YLuwUZKGne2PvO8HilCw54/GT?node-id=0-1&embed-host=share"
               className="w-full h-full"
               allowFullScreen
+            />
+          </div>
+        )}
+
+        {showPDF && (
+          <div className="w-full h-[40rem] rounded-xl overflow-hidden mt-[2rem]">
+            <iframe
+              src={gt_ppt}
+              width="100%"
+              height="600px"
+              title="프로젝트 발표 자료"
             />
           </div>
         )}

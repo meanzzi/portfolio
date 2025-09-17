@@ -385,7 +385,7 @@ const Beour = () => {
         </div>
 
         {showIframe && (
-          <div className="w-full h-[40rem] rounded-xl overflow-hidden mb-[2rem] border">
+          <div className="w-full h-[40rem] rounded-xl overflow-hidden mt-[2rem]">
             <iframe
               src="https://embed.figma.com/design/e0zDkXPpcfPwQ1RPFtyeNt/Be-our?node-id=0-1&embed-host=share"
               className="w-full h-full"
