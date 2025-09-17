@@ -6,13 +6,13 @@ import Skill from "./Skill";
 
 const MainPage = () => {
   return (
-    <div className="bg-[#679258] p-[2rem] scroll-smooth">
+    <div className="bg-[#679258] px-[10rem] py-[4rem] scroll-smooth">
       <div className="bg-white rounded-[1rem]">
         <Header />
-        <div className="mx-[8rem] my-[3rem] py-[5rem]">
+        <div className="mx-[10rem] my-[3rem] py-[5rem]">
           <Profile />
         </div>
-        <div className="mx-[6rem]">
+        <div className="mx-[9rem]">
           <Skill />
         </div>
         <Project />

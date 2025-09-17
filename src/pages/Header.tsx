@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="fixed top-0 left-0 w-full z-50 px-[3rem] py-[1.5rem] backdrop-blur-sm">
+    <div className="fixed top-0 left-0 w-full z-50 px-[3rem] pt-[3rem] backdrop-blur-sm">
       <div className="flex items-center justify-end gap-[1rem] text-[1.2rem] cursor-pointer">
         <a
           href="#about"

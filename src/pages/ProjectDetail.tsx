@@ -20,7 +20,7 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="bg-[#679258] p-[2rem]">
+    <div className="bg-[#679258] px-[10rem] py-[4rem]">
       <div className="bg-white rounded-[1rem]">
         {projectId === 1 && <Gt />}
         {projectId === 2 && <Beour />}

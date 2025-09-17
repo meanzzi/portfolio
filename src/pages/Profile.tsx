@@ -23,9 +23,9 @@ const Profile = () => {
           <img
             src={minji}
             alt="프로필 사진"
-            className="rounded-[2rem] w-[20rem] ml-[8rem] my-[5rem]"
+            className="rounded-[2rem] w-[20rem] ml-[8rem] mt-[3rem] mb-[5rem]"
           />
-          <div className="ml-[5rem] my-[5rem]">
+          <div className="ml-[5rem] mt-[3rem] mb-[5rem]">
             <div className="font-sora text-[3rem] text-[#679258]">About Me</div>
             <div className="mt-[2rem] text-[1.5rem] mr-[8rem]">
               <div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Accordion from "../../components/Accordion";
 
 import back from "../../assets/back.svg";
@@ -10,13 +11,17 @@ import urlgray from "../../assets/url_gray.svg";
 import gitgray from "../../assets/github_gray.svg";
 import notion from "../../assets/notion.svg";
 import figma from "../../assets/figma.svg";
-import gt_video from "../../assets/gt_video.mp4";
-import { useNavigate } from "react-router-dom";
+import beour from "../../assets/beour.png";
+import beour_2 from "../../assets/beour_2.png";
+import beour_3 from "../../assets/beour_3.png";
+import beour_4 from "../../assets/beour_4.png";
+import beour_5 from "../../assets/beour_5.png";
+import beour_7 from "../../assets/beour_7.png";
+
 import { BsFillLightningFill } from "react-icons/bs";
 import { IoMdLeaf } from "react-icons/io";
 import { FaLightbulb } from "react-icons/fa6";
 import { PiPencilSimpleFill } from "react-icons/pi";
-import { RiTreeFill } from "react-icons/ri";
 
 const Beour = () => {
   const nav = useNavigate();
@@ -48,9 +53,10 @@ const Beour = () => {
         2025-05 ~ 진행 중
       </div>
       <div className="mx-[6rem] my-[2rem] text-[#303030] text-[1.3rem]">
-        비어 있는 공간이 우리(BE OUR)의 기회로 <br />
-        브레이크타임이나 휴무일에 점포 공간 활용함으로써 비어 있는 순간을
-        수익으로 채울 수 있게 하는 B2C 플랫폼 입니다.
+        브레이크타임이나 휴무일에 잠시 비어있는 점포 공간을 활용하여 수익을
+        창출할 수 있도록 돕는 B2C 웹앱입니다. 유휴 공간의 활용도를 높여 점포에는
+        추가 수익을, 사용자에게는 다양한 활동 공간을 제공하는 것을 목표로
+        합니다.
       </div>
 
       <div className="mx-[6rem] text-[1.3rem]">
@@ -78,10 +84,13 @@ const Beour = () => {
         <div className="flex items-start gap-[2rem]">
           <p>주요 기능</p>
           <ul className="text-[#3D3D3D] list-disc pl-5 m-0 leading-[2.2rem]">
-            <li>머신러닝 기반 상품 가격 예측 및 추천</li>
-            <li>직관적인 상품 검색 및 필터링</li>
-            <li>안정적인 상품 등록 및 관리</li>
-            <li>JWT 기반 사용자 인증 및 권한 관리</li>
+            <li>메인: 추천 공간, 최신 리뷰, 카테고리별 공간 필터링/슬라이더</li>
+            <li>공간 상세: 공간 정보, 리뷰, 위치 조회, 공유/즐겨찾기</li>
+            <li>공간 예약: 날짜·시간 선택, 목적/요청 사항 입력, 예약 신청</li>
+            <li>
+              나의 예약: 진행/완료/취소 관리, 리뷰 작성 , 예약 공간 지도 조회
+            </li>
+            <li>내 주변 공간: 현재 위치 기반 탐색 (Kakao Map API)</li>
           </ul>
         </div>
       </div>
@@ -94,13 +103,12 @@ const Beour = () => {
         </div>
 
         <ul className="list-disc pl-5 m-0 leading-[2.7rem] text-[1.3rem] text-[#303030] marker:text-[#679258]">
-          <li>프론트엔드 개발 담당 (UI/UX 설계 및 구현 전반)</li>
-          <li>데이터 수집·가공 참여, 머신러닝 모델 개발 방향 제시</li>
-          <li>백엔드 및 머신러닝 API 연동, 데이터 흐름·통신 조율</li>
-          <li>
-            Git 기반 버전 관리 및 코드 리뷰 참여, Google Sheets로 API 명세 및
-            일정 관리
-          </li>
+          <li>프론트엔드 개발 담당 - 게스트 화면 구현 80%</li>
+          <li>Figma기반 와이어프레임 제작 및 UX 개선 피드백</li>
+          <li>React Query로 API 연동, 전역 상태 관리 및 에러 핸들링</li>
+          <li>TypeScript + Tailwind CSS로 타입 안정성과 UI 일관성 확보</li>
+          <li>Git 협업 & 코드 리뷰 참여 (가독성·유지보수성 향상)</li>
+          <li>Notion을 통한 일정 관리 및 팀 커뮤니케이션</li>
         </ul>
       </div>
 
@@ -112,19 +120,78 @@ const Beour = () => {
         <Accordion
           items={[
             {
-              title: "머신러닝 기반 가격 추천 시스템 연동",
-              content:
-                "상품 상태와 카테고리를 입력받아, 머신러닝 모델의 API와 연동하여 실시간으로 예측 가격 범위를 제공합니다. React에서 useState와 비동기 API 호출을 활용하여 가격 범위를 슬라이더로 시각화하고, 입력 가격의 적절성을 즉각 피드백하여 사용자 신뢰도를 높였습니다.",
+              title: "게스트 메인 페이지",
+              content: (
+                <div className="flex items-center justify-center gap-[3rem]">
+                  <img src={beour} className="w-[23rem]" />
+                  <img src={beour_2} className="w-[20rem]" />
+                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                    <li>
+                      keen-slider로 메인 배너·공간/리뷰 슬라이더 구현 (자동 전환
+                      효과)
+                    </li>
+                    <li>
+                      React Query로 공간/리뷰 데이터 캐싱 및 로딩 성능 최적화
+                    </li>
+                    <li>
+                      카테고리별 공간 필터링 및 반응형 UI 구축 (Tailwind CSS)
+                    </li>
+                  </ul>
+                </div>
+              ),
             },
             {
-              title: "상품 등록 및 이미지 관리",
-              content:
-                "FileReader API를 통해 업로드된 이미지를 즉시 미리보기하며, localStorage를 사용해 새로 고침 시에도 임시 저장을 유지했습니다. JWT 토큰을 Authorization 헤더에 포함시켜 인증된 상태로 fetch API를 통해 상품 등록 요청을 보내고, 머신러닝 추천 가격과 비교해 시각적 피드백을 제공하여 사용자의 합리적 가격 설정을 지원했습니다.",
+              title: "공간 상세 페이지",
+              content: (
+                <div className="flex items-center justify-center gap-[5rem]">
+                  <img src={beour_3} className="w-[20rem]" />
+                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                    <li>동적 라우팅으로 개별 공간 상세 정보 렌더링</li>
+                    <li>별점 평균 포함 리뷰 리스트 슬라이더 구현</li>
+                    <li>공간 공유 및 즐겨찾기 기능 제공</li>
+                  </ul>
+                </div>
+              ),
             },
             {
-              title: "다양한 상품 정보 탐색",
-              content:
-                "컴포넌트 마운트 시 axios와 useEffect를 활용해 상품 데이터를 비동기 호출하며, useState로 로딩 및 에러 상태를 관리했습니다. useParams로 URL에서 상품 ID를 추출해 상세 정보를 요청하고, 클라이언트 측 필터링과 가격 추천 범위 내 상품에 시각적 체크 아이콘 표시로 사용자 편의를 극대화했습니다. 또한, localStorage에 저장된 이미지를 불러와 상세 페이지에 렌더링하며 사용자 경험을 향상시켰습니다.",
+              title: "게스트 공간 예약 페이지",
+              content: (
+                <div className="flex items-center justify-center gap-[5rem]">
+                  <img src={beour_4} className="w-[20rem]" />
+                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                    <li>직접 구현한 DayPicker·시간 버튼 UI로 예약 입력</li>
+                    <li>state 관리 → 최종 예약 정보 POST 전송</li>
+                    <li>인원·시간 단위에 따른 실시간 가격 계산</li>
+                    <li>예약 확인 모달로 절차 명확성 향상</li>
+                  </ul>
+                </div>
+              ),
+            },
+            {
+              title: "나의 예약 페이지",
+              content: (
+                <div className="flex items-center justify-center gap-[5rem]">
+                  <img src={beour_5} className="w-[20rem]" />
+                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                    <li>진행/완료/취소 상태별 필터링 및 조건부 렌더링</li>
+                    <li>리뷰 작성 전·후 UI를 색상 차이로 구분</li>
+                    <li>Kakao Map API로 예약 공간 위치 시각화</li>
+                  </ul>
+                </div>
+              ),
+            },
+            {
+              title: "내 주변 공간 페이지",
+              content: (
+                <div className="flex items-center justify-center gap-[5rem]">
+                  <img src={beour_7} className="h-[30rem]" />
+                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                    <li>Geolocation API 기반 현재 위치 탐색</li>
+                    <li>Kakao Map API로 주변 공간 마커 표시</li>
+                    <li>주소 기반 검색어 입력으로 위치별 공간 탐색</li>
+                  </ul>
+                </div>
+              ),
             },
           ]}
         />
@@ -138,27 +205,28 @@ const Beour = () => {
         <Accordion
           items={[
             {
-              title: "JWT 토큰 유효성 관리 및 사용자 접근 제어",
+              title: "GitHub Actions CI/CD 배포 문제 해결",
               content: (
                 <div className="text-[#303030]">
                   <div className="">
-                    <p className="text-[#000000]">문제 상황</p>
-                    <p>
-                      페이지 새로고침 시 로그인 상태가 유실되고, 만료된 토큰으로
-                      불필요한 API 요청이 발생했습니다.
-                    </p>
+                    초기 배포 과정에서 TypeScript 타입 에러, 미사용 코드, 의존성
+                    불일치로 배포가 자주 실패했습니다. 이로 인해 개발 생산성이
+                    저하되고 안정적인 배포 환경이 필요했습니다.
                   </div>
 
                   <div className="my-[1.5rem]">
                     <p className="text-[#000000]">해결 과정</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
                       <li>
-                        토큰 유효성 검사 함수 구현 → sessionStorage와 만료시간
-                        체크
+                        TypeScript 엄격 모드 적용 및 ESLint/Prettier 규칙 강화로
+                        코드 품질 향상
                       </li>
                       <li>
-                        axios 인터셉터 설정 → 모든 요청에 JWT 자동 추가, 401
-                        발생 시 자동 로그아웃
+                        GitHub Actions에서 빌드 전 타입·Lint 검증으로 오류 차단
+                      </li>
+                      <li>
+                        react·react-dom 버전 고정으로 일관된 node_modules 환경
+                        유지
                       </li>
                     </ul>
                   </div>
@@ -166,56 +234,109 @@ const Beour = () => {
                   <div>
                     <p className="text-[#000000]">결과 및 배운 점</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>새로고침 시 로그인 유지, 만료 토큰 자동 로그아웃</li>
-                      <li>프론트엔드에서 인증/인가 상태 관리 중요성 이해</li>
+                      <li>배포 실패율 감소, 안정적인 CI/CD 환경 확보</li>
+                      <li>
+                        자동화된 코드 품질 관리와 의존성 고정의 중요성 이해
+                      </li>
                     </ul>
                   </div>
                 </div>
               ),
             },
+
             {
-              title: "FormData 기반 안정적인 이미지 업로드 및 미리보기",
+              title: "Kakao Map API 초기 환경 설정 및 기능 안정화",
               content: (
                 <div className="text-[#303030]">
-                  <div className="">
-                    <p className="text-[#000000]">문제 상황</p>
-                    <p>
-                      상품 등록 시 이미지를 Base64로 변환해 JSON에 포함시키는
-                      방식으로 전송했는데, 대용량 이미지에서 전송 실패와 성능
-                      저하 문제가 발생했습니다.
-                    </p>
+                  <div>
+                    Kakao Map API 연동 시 지도 화면이 로드되지 않고 흰색 빈
+                    공간으로 표시되었습니다. 특히 배포 환경 전환 시 서버 도메인
+                    설정 누락으로 JavaScript API 키 에러 발생, Geolocation API
+                    위치 정보 획득 실패 및 HTTPS 미지원 환경으로 인해 사용자
+                    위치 서비스 제공에 어려움이 있었습니다.
                   </div>
 
                   <div className="my-[1.5rem]">
-                    <p className="text-[#000000]">해결 과정</p>
+                    <p className="text-[#000000] font-semibold">해결 과정</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
                       <li>
-                        FormData 객체 사용: 이미지 전송을 multipart/form-data로
-                        변경하여 대용량 파일 처리 효율 향상
+                        API 키와 도메인 검증: Kakao 개발자 콘솔에서 모든
+                        개발/배포 도메인을 등록하여 도메인 불일치 문제 해결
                       </li>
                       <li>
-                        이미지 미리보기 최적화: URL.createObjectURL로 즉시
-                        미리보기 제공, 실제 서버 전송 시만 File 객체 사용
+                        지도 컨테이너 크기 명시: width·height 지정으로 지도 로드
+                        공간 확보
                       </li>
                       <li>
-                        백엔드와의 협의: AWS S3에 이미지 저장, DB에는 URL만
-                        저장하는 구조 설계
+                        브라우저 호환성 및 예외 처리: Geolocation 지원 여부 확인
+                        후 경고 처리
+                      </li>
+                      <li>HTTPS 환경 전환: 위치 정보 접근 제한 문제 해결</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-[#000000] font-semibold">
+                      결과 및 배운 점
+                    </p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        Kakao Map API 및 Geolocation API 초기화와 환경 설정 이해
+                      </li>
+                      <li>
+                        HTTPS, 도메인 관리, 브라우저 보안 이슈 선제 처리 경험
+                      </li>
+                      <li>
+                        안정적인 지도 초기 로딩과 핵심 기능 동작 기반 확보
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              ),
+            },
+
+            {
+              title: "Kakao Map 마커 위치 오차 및 이벤트 미작동 문제 해결",
+              content: (
+                <div className="text-[#303030]">
+                  <div>
+                    CustomOverlayMap을 이용해 지도 위 마커를 표시했으나, 마커
+                    위치가 실제 좌표와 약간 어긋나고 클릭 이벤트가 동작하지 않아
+                    사용자 상호작용이 불가능했습니다.
+                  </div>
+
+                  <div className="my-[1.5rem]">
+                    <p className="text-[#000000] font-semibold">해결 과정</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        마커 위치 조정: yAnchor 속성을 수정하여 이미지 하단이
+                        실제 좌표와 일치하도록 기준점 설정
+                      </li>
+                      <li>
+                        이벤트 리스너 직접 부착: CustomOverlayMap 내부 div에
+                        onClick 이벤트 구현
+                      </li>
+                      <li>
+                        데이터 연동 및 시각적 피드백: 클릭 시 공간 ID 전달 확인,
+                        선택 마커 색상/크기 변동으로 사용자 인지 개선
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
+                    <p className="text-[#000000] font-semibold">
+                      결과 및 배운 점
+                    </p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
                       <li>
-                        안정적이고 효율적인 이미지 업로드 구현으로 사용자 경험
-                        개선
+                        CustomOverlayMap 기준점(Anchor) 설정과 React 이벤트 관리
+                        중요성 학습
                       </li>
-                      <li>FormData 및 미리보기 최적화에 대한 이해 강화</li>
                       <li>
-                        프론트·백엔드 연동 과정에서 발생 가능한 문제 해결 능력
-                        향상
+                        Kakao Map API low-level 기능을 React 환경에 맞게
+                        커스터마이징 경험
                       </li>
+                      <li>사용자 상호작용과 UI 구현 능력 향상</li>
                     </ul>
                   </div>
                 </div>
@@ -225,7 +346,7 @@ const Beour = () => {
         />
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
+      {/* <div className="mx-[6rem] my-[2rem]">
         <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <RiTreeFill />
           결과 화면
@@ -235,7 +356,7 @@ const Beour = () => {
           controls
           className="w-full h-[450px] rounded-xl border"
         />
-      </div>
+      </div> */}
 
       <div className="mx-[6rem] mt-[2rem] pb-[2rem]">
         <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
