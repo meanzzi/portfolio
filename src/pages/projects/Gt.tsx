@@ -127,7 +127,7 @@ const Gt = () => {
               title: "상품 등록 및 이미지 관리",
               content: (
                 <div>
-                  <img src={gt_2} />
+                  <img src={gt_3} />
                   <p>
                     FileReader API를 통해 업로드된 이미지를 즉시 미리보기하며,
                     localStorage를 사용해 새로 고침 시에도 임시 저장을
@@ -143,7 +143,7 @@ const Gt = () => {
               title: "다양한 상품 정보 탐색",
               content: (
                 <div>
-                  <img src={gt_3} />
+                  <img src={gt_2} />
                   <p>
                     컴포넌트 마운트 시 axios와 useEffect를 활용해 상품 데이터를
                     비동기 호출하며, useState로 로딩 및 에러 상태를
