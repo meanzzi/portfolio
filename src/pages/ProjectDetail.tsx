@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import Gt from "./projects/Gt";
 import Beour from "./projects/Beour";
+import GatherTree from "./projects/GatherTree";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -24,6 +25,7 @@ const ProjectDetail = () => {
       <div className="bg-white rounded-[1rem]">
         {projectId === 1 && <Gt />}
         {projectId === 2 && <Beour />}
+        {projectId === 3 && <GatherTree />}
       </div>
     </div>
   );

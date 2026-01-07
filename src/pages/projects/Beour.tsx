@@ -50,7 +50,7 @@ const Beour = () => {
       </div>
 
       <div className="text-center text-[#A4A4A4] text-[1.3rem]">
-        2025-05 ~ 진행 중
+        2025-05 ~ 2025-10
       </div>
       <div className="mx-[6rem] my-[2rem] text-[#303030] text-[1.3rem]">
         브레이크타임이나 휴무일에 잠시 비어있는 점포 공간을 활용하여 수익을
@@ -70,7 +70,8 @@ const Beour = () => {
             src={urlgray}
             className="cursor-pointer w-[1.8rem] ml-[1rem]"
             onClick={() =>
-              window.open("https://frontend.beour.store/", "_blank")
+              // window.open("https://frontend.beour.store/", "_blank")
+              window.alert("현재 배포가 종료되었습니다.")
             }
           />
           <img
@@ -345,18 +346,6 @@ const Beour = () => {
           ]}
         />
       </div>
-
-      {/* <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
-          <RiTreeFill />
-          결과 화면
-        </div>
-        <video
-          src={gt_video}
-          controls
-          className="w-full h-[450px] rounded-xl border"
-        />
-      </div> */}
 
       <div className="mx-[6rem] mt-[2rem] pb-[2rem]">
         <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">

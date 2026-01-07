@@ -1,5 +1,6 @@
 import gt from "../assets/gt.png";
 import beour from "../assets/beour.png";
+import treeTn from "../assets/tree_tn.png";
 
 export interface Project {
   id: number;
@@ -27,7 +28,16 @@ export const projects: Project[] = [
     alt: "Be:our",
     name: "Be:our",
     tag: "Team",
-    date: "2025-05 ~ 진행중",
+    date: "2025-05 ~ 2025-10",
     description: "비어 있는 공간이 우리(BE OUR)의 기회로",
+  },
+  {
+    id: 3,
+    img: treeTn,
+    alt: "GatherTree",
+    name: "GatherTree",
+    tag: "Team",
+    date: "2025-12 ~ 2025-12",
+    description: "픽셀 아트로 함께 완성하는 참여형 크리스마스 트리 웹앱",
   },
 ];
