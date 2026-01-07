@@ -29,46 +29,48 @@ const Beour = () => {
 
   return (
     <div>
-      <div className="px-[3rem] pt-[4rem] flex items-center justify-between">
+      <div className="px-4 md:px-[3rem] pt-[4rem] flex items-center justify-between">
         <div className="flex items-center">
           <img
             src={back}
             onClick={() => nav(-1)}
-            className="cursor-pointer w-[2.3rem]"
+            className="cursor-pointer w-[1.8rem] md:w-[2.3rem]"
           />
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="text-[2.4rem] font-bold mr-[1rem]">BE:OUR</div>
-          <img src={reactlogo} className="w-[1.5rem]" />
-          <img src={tslogo} className="w-[1.5rem]" />
-          <img src={tailwind} className="w-[1.5rem]" />
-          <img src={vite} className="w-[1.5rem]" />
+          <div className="text-[1.5rem] md:text-[2.4rem] font-bold mr-[0.5rem] md:mr-[1rem]">
+            BE:OUR
+          </div>
+          <img src={reactlogo} className="w-[1.2rem] md:w-[1.5rem]" />
+          <img src={tslogo} className="w-[1.2rem] md:w-[1.5rem]" />
+          <img src={tailwind} className="w-[1.2rem] md:w-[1.5rem]" />
+          <img src={vite} className="w-[1.2rem] md:w-[1.5rem]" />
         </div>
 
-        <div className="w-[2rem]"></div>
+        <div className="w-[1.8rem] md:w-[2rem]"></div>
       </div>
 
       <div className="text-center text-[#A4A4A4] text-[1.3rem]">
         2025-05 ~ 2025-10
       </div>
-      <div className="mx-[6rem] my-[2rem] text-[#303030] text-[1.3rem]">
+      <div className="px-5 md:mx-[6rem] my-[2rem] text-[#303030] text-[1rem] md:text-[1.3rem] leading-relaxed">
         브레이크타임이나 휴무일에 잠시 비어있는 점포 공간을 활용하여 수익을
         창출할 수 있도록 돕는 B2C 웹앱입니다. 유휴 공간의 활용도를 높여 점포에는
         추가 수익을, 사용자에게는 다양한 활동 공간을 제공하는 것을 목표로
         합니다.
       </div>
 
-      <div className="mx-[6rem] text-[1.3rem]">
-        <div className="flex items-center gap-[2rem]">
-          <p>참여 인원</p>
+      <div className="px-5 md:mx-[6rem] text-[1rem] md:text-[1.3rem]">
+        <div className="flex items-center gap-[1rem] md:gap-[2rem]">
+          <p className="min-w-[4rem]">참여 인원</p>
           <p className="text-[#3D3D3D]">6명 (UI/UX 1, FE 3, BE 2)</p>
         </div>
         <div className="flex items-start gap-[1rem] my-[1rem]">
           <p>관련 링크</p>
           <img
             src={urlgray}
-            className="cursor-pointer w-[1.8rem] ml-[1rem]"
+            className="cursor-pointer w-[1.8rem]"
             onClick={() =>
               // window.open("https://frontend.beour.store/", "_blank")
               window.alert("현재 배포가 종료되었습니다.")
@@ -95,15 +97,15 @@ const Beour = () => {
           </ul>
         </div>
       </div>
-      <hr className="mx-[6rem] border-t-1 border-gray-300 my-[3rem]" />
+      <hr className="mx-5 md:mx-[6rem] border-t-1 border-gray-300 my-[2rem] md:my-[3rem]" />
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <IoMdLeaf />
           담당 역할 및 기여
         </div>
 
-        <ul className="list-disc pl-5 m-0 leading-[2.7rem] text-[1.3rem] text-[#303030] marker:text-[#679258]">
+        <ul className="list-disc pl-5 m-0 leading-[2rem] md:leading-[2.7rem] text-[1rem] md:text-[1.3rem] text-[#303030] marker:text-[#679258]">
           <li>프론트엔드 개발 담당 - 게스트 화면 구현 80%</li>
           <li>Figma기반 와이어프레임 제작 및 UX 개선 피드백</li>
           <li>React Query로 API 연동, 전역 상태 관리 및 에러 핸들링</li>
@@ -113,8 +115,8 @@ const Beour = () => {
         </ul>
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <FaLightbulb />
           주요 기능 상세 구현
         </div>
@@ -123,10 +125,12 @@ const Beour = () => {
             {
               title: "게스트 메인 페이지",
               content: (
-                <div className="flex items-center justify-center gap-[3rem]">
-                  <img src={beour} className="w-[23rem]" />
-                  <img src={beour_2} className="w-[20rem]" />
-                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[3rem]">
+                  <div className="flex gap-2 justify-center">
+                    <img src={beour} className="w-[10rem] md:w-[23rem]" />
+                    <img src={beour_2} className="w-[8rem] md:w-[20rem]" />
+                  </div>
+                  <ul className="list-disc pl-5 leading-[1.8rem] md:leading-[2.2rem] text-[0.95rem] md:text-base">
                     <li>
                       keen-slider로 메인 배너·공간/리뷰 슬라이더 구현 (자동 전환
                       효과)
@@ -144,9 +148,11 @@ const Beour = () => {
             {
               title: "공간 상세 페이지",
               content: (
-                <div className="flex items-center justify-center gap-[5rem]">
-                  <img src={beour_3} className="w-[20rem]" />
-                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[3rem]">
+                  <div className="flex gap-2 justify-center">
+                    <img src={beour_3} className="w-[20rem]" />
+                  </div>
+                  <ul className="list-disc pl-5 leading-[1.8rem] md:leading-[2.2rem] text-[0.95rem] md:text-base">
                     <li>동적 라우팅으로 개별 공간 상세 정보 렌더링</li>
                     <li>별점 평균 포함 리뷰 리스트 슬라이더 구현</li>
                     <li>공간 공유 및 즐겨찾기 기능 제공</li>
@@ -157,9 +163,11 @@ const Beour = () => {
             {
               title: "게스트 공간 예약 페이지",
               content: (
-                <div className="flex items-center justify-center gap-[5rem]">
-                  <img src={beour_4} className="w-[20rem]" />
-                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[3rem]">
+                  <div className="flex gap-2 justify-center">
+                    <img src={beour_4} className="w-[20rem]" />
+                  </div>
+                  <ul className="list-disc pl-5 leading-[1.8rem] md:leading-[2.2rem] text-[0.95rem] md:text-base">
                     <li>직접 구현한 DayPicker·시간 버튼 UI로 예약 입력</li>
                     <li>state 관리 → 최종 예약 정보 POST 전송</li>
                     <li>인원·시간 단위에 따른 실시간 가격 계산</li>
@@ -171,9 +179,11 @@ const Beour = () => {
             {
               title: "나의 예약 페이지",
               content: (
-                <div className="flex items-center justify-center gap-[5rem]">
-                  <img src={beour_5} className="w-[20rem]" />
-                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[3rem]">
+                  <div className="flex gap-2 justify-center">
+                    <img src={beour_5} className="w-[20rem]" />
+                  </div>
+                  <ul className="list-disc pl-5 leading-[1.8rem] md:leading-[2.2rem] text-[0.95rem] md:text-base">
                     <li>진행/완료/취소 상태별 필터링 및 조건부 렌더링</li>
                     <li>리뷰 작성 전·후 UI를 색상 차이로 구분</li>
                     <li>Kakao Map API로 예약 공간 위치 시각화</li>
@@ -184,9 +194,11 @@ const Beour = () => {
             {
               title: "내 주변 공간 페이지",
               content: (
-                <div className="flex items-center justify-center gap-[5rem]">
-                  <img src={beour_7} className="h-[30rem]" />
-                  <ul className="list-disc pl-5 leading-[2.2rem]">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-[3rem]">
+                  <div className="flex gap-2 justify-center">
+                    <img src={beour_7} className="h-[30rem]" />
+                  </div>
+                  <ul className="list-disc pl-5 leading-[1.8rem] md:leading-[2.2rem] text-[0.95rem] md:text-base">
                     <li>Geolocation API 기반 현재 위치 탐색</li>
                     <li>Kakao Map API로 주변 공간 마커 표시</li>
                     <li>주소 기반 검색어 입력으로 위치별 공간 탐색</li>
@@ -198,8 +210,8 @@ const Beour = () => {
         />
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <BsFillLightningFill />
           트러블 슈팅
         </div>
@@ -347,12 +359,12 @@ const Beour = () => {
         />
       </div>
 
-      <div className="mx-[6rem] mt-[2rem] pb-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] mt-[2rem] pb-[4rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <PiPencilSimpleFill />
           기획 자료
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4 md:gap-6">
           <img
             src={notion}
             alt="노션"

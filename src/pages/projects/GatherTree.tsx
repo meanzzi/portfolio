@@ -26,37 +26,39 @@ const GatherTree = () => {
 
   return (
     <div>
-      <div className="px-[3rem] pt-[4rem] flex items-center justify-between">
+      <div className="px-4 md:px-[3rem] pt-[4rem] flex items-center justify-between">
         <div className="flex items-center">
           <img
             src={back}
             onClick={() => nav(-1)}
-            className="cursor-pointer w-[2.3rem]"
+            className="cursor-pointer w-[1.8rem] md:w-[2.3rem]"
           />
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="text-[2.4rem] font-bold mr-[1rem]">GatherTree</div>
-          <img src={reactlogo} className="w-[1.5rem]" />
-          <img src={jslogo} className="w-[1.5rem]" />
-          <img src={vitelogo} className="w-[1.5rem]" />
+          <div className="text-[1.5rem] md:text-[2.4rem] font-bold mr-[0.5rem] md:mr-[1rem]">
+            GatherTree
+          </div>
+          <img src={reactlogo} className="w-[1.2rem] md:w-[1.5rem]" />
+          <img src={jslogo} className="w-[1.2rem] md:w-[1.5rem]" />
+          <img src={vitelogo} className="w-[1.2rem] md:w-[1.5rem]" />
         </div>
 
-        <div className="w-[2rem]"></div>
+        <div className="w-[1.8rem] md:w-[2rem]"></div>
       </div>
 
       <div className="text-center text-[#A4A4A4] text-[1.3rem]">
         2025-12 ~ 2025-12
       </div>
-      <div className="mx-[6rem] my-[2rem] text-[#303030] text-[1.3rem]">
+      <div className="px-5 md:mx-[6rem] my-[2rem] text-[#303030] text-[1rem] md:text-[1.3rem] leading-relaxed">
         유저가 직접 트리를 그리고, 친구에게 공유 URL을 보내 장식을 받아 함께
         꾸미는 이벤트형 웹앱입니다. 완성된 트리는 AI에게 순한맛/매운맛 평가를
         받을 수 있고, 결과 이미지를 다운로드 할 수 있습니다.
       </div>
 
-      <div className="mx-[6rem] text-[1.3rem]">
-        <div className="flex items-center gap-[2rem]">
-          <p>참여 인원</p>
+      <div className="px-5 md:mx-[6rem] text-[1rem] md:text-[1.3rem]">
+        <div className="flex items-center gap-[1rem] md:gap-[2rem]">
+          <p className="min-w-[4rem]">참여 인원</p>
           <p className="text-[#3D3D3D]">2명 (FE 1, BE 1)</p>
         </div>
         <div className="flex items-start gap-[2rem] my-[1rem]">
@@ -84,15 +86,15 @@ const GatherTree = () => {
           </ul>
         </div>
       </div>
-      <hr className="mx-[6rem] border-t-1 border-gray-300 my-[3rem]" />
+      <hr className="mx-5 md:mx-[6rem] border-t-1 border-gray-300 my-[2rem] md:my-[3rem]" />
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <IoMdLeaf />
           담당 역할 및 기여 (Frontend Developer)
         </div>
 
-        <ul className="list-disc pl-5 m-0 leading-[2.7rem] text-[1.3rem] text-[#303030] marker:text-[#679258]">
+        <ul className="list-disc pl-5 m-0 leading-[2rem] md:leading-[2.7rem] text-[1rem] md:text-[1.3rem] text-[#303030] marker:text-[#679258]">
           <li>
             커스텀 픽셀 편집기 개발: Canvas API를 활용하여 픽셀 단위 드로잉,
             레이어 합성, 초기화 기능을 포함한 편집 시스템 구축
@@ -112,8 +114,8 @@ const GatherTree = () => {
         </ul>
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <FaLightbulb />
           주요 기능 상세 구현
         </div>
@@ -122,54 +124,92 @@ const GatherTree = () => {
             {
               title: "커스텀 픽셀 아트 편집 및 레이어 시스템",
               content: (
-                <div className="flex items-center justify-center gap-[3rem]">
-                  <img src={tree_1} alt="트리 편집 화면" />
-                  <img src={tree_2} alt="트리 편집 화면" />
+                <div className="flex flex-col gap-6">
+                  <div className="flex gap-4 justify-center items-center w-full">
+                    <img
+                      src={tree_1}
+                      alt="트리 편집 화면"
+                      className="w-[46%] md:max-w-[16rem] lg:max-w-[20rem] h-auto rounded-lg shadow-md"
+                    />
+                    <img
+                      src={tree_2}
+                      alt="트리 편집 화면"
+                      className="w-[48%] md:max-w-[18rem] lg:max-w-[22rem] h-auto rounded-lg shadow-md"
+                    />
+                  </div>
 
-                  <p>
-                    HTML5 Canvas API를 활용하여 160×192(트리), 32×32(장식)
-                    규격의 픽셀 편집기를 구현했습니다. 단순 드로잉을 넘어 기본
-                    트리 이미지와 사용자 드로잉 레이어를 비동기 파이프라인으로
-                    합성하는 시스템을 구축했으며, 선형 보간 알고리즘을 적용해
-                    빠른 마우스 이동 시에도 선이 끊기지 않는 매끄러운 드로잉
-                    경험을 제공했습니다.
-                  </p>
+                  <div className="w-full">
+                    <p className="text-[1rem] md:text-[1.15rem] leading-[1.8] text-[#3D3D3D] bg-gray-50 p-4 md:p-6 rounded-xl">
+                      HTML5 Canvas API를 활용하여 160×192(트리), 32×32(장식)
+                      규격의 픽셀 편집기를 구현했습니다. 단순 드로잉을 넘어 기본
+                      트리 이미지와 사용자 드로잉 레이어를 비동기 파이프라인으로
+                      합성하는 시스템을 구축했으며, 선형 보간 알고리즘을 적용해
+                      빠른 마우스 이동 시에도 선이 끊기지 않는 매끄러운 드로잉
+                      경험을 제공했습니다.
+                    </p>
+                  </div>
                 </div>
               ),
             },
             {
               title: "비회원 공유 시스템 및 수학적 좌표 매핑",
               content: (
-                <div className="flex items-center justify-center gap-[3rem]">
-                  <img src={tree_3} alt="장식 관리 화면" />
-                  <img src={tree_4} alt="장식 관리 화면" />
+                <div className="flex flex-col gap-6">
+                  <div className="flex gap-4 justify-center items-center w-full">
+                    <img
+                      src={tree_3}
+                      alt="장식 관리 화면"
+                      className="w-[48%] md:max-w-[18rem] lg:max-w-[22rem] h-auto rounded-lg shadow-md"
+                    />
+                    <img
+                      src={tree_4}
+                      alt="장식 관리 화면"
+                      className="w-[48%] md:max-w-[18rem] lg:max-w-[22rem] h-auto rounded-lg shadow-md"
+                    />
+                  </div>
 
-                  <p>
-                    별도의 회원가입 없이 UUID 식별자가 포함된 URL로 트리 주인과
-                    참여자의 권한을 동적으로 분기하여 접근성을 높였습니다. 특히
-                    트리의 피라미드 구조를 고려해 센터 정렬 및 행별 좌표 산출
-                    공식을 직접 설계했습니다. 10개의 고정 슬롯 좌표를 수학적으로
-                    계산하고, 트리 주인이 장식 순서를 변경할 때마다 데이터의
-                    인덱스를 좌표 배열에 실시간 매핑하여 별도의 레이아웃 수정
-                    없이도 트리가 즉각적으로 재구성되도록 구현했습니다.
-                  </p>
+                  <div className="w-full">
+                    <p className="text-[1rem] md:text-[1.15rem] leading-[1.8] text-[#3D3D3D] bg-gray-50 p-4 md:p-6 rounded-xl">
+                      별도의 회원가입 없이 UUID 식별자가 포함된 URL로 트리
+                      주인과 참여자의 권한을 동적으로 분기하여 접근성을
+                      높였습니다. 특히 트리의 피라미드 구조를 고려해 센터 정렬
+                      및 행별 좌표 산출 공식을 직접 설계했습니다. 10개의 고정
+                      슬롯 좌표를 수학적으로 계산하고, 트리 주인이 장식 순서를
+                      변경할 때마다 데이터의 인덱스를 좌표 배열에 실시간
+                      매핑하여 별도의 레이아웃 수정 없이도 트리가 즉각적으로
+                      재구성되도록 구현했습니다.
+                    </p>
+                  </div>
                 </div>
               ),
             },
             {
               title: "AI 멀티 페르소나 평가 및 SNS 최적화 공유",
               content: (
-                <div className="flex items-center justify-center gap-[3rem]">
-                  <img src={tree_5} alt="AI 평가 결과 화면" />
-                  <img src={tree_6} alt="AI 평가 결과 화면" />
+                <div className="flex flex-col gap-6">
+                  <div className="flex gap-4 justify-center items-center w-full">
+                    <img
+                      src={tree_5}
+                      alt="AI 평가 결과 화면"
+                      className="w-[48%] md:max-w-[18rem] lg:max-w-[22rem] h-auto rounded-lg shadow-md"
+                    />
+                    <img
+                      src={tree_6}
+                      alt="AI 평가 결과 화면"
+                      className="w-[48%] md:max-w-[18rem] lg:max-w-[22rem] h-auto rounded-lg shadow-md"
+                    />
+                  </div>
 
-                  <p>
-                    OpenAI GPT-4o API를 연동하여 사용자의 선택(순한맛/매운맛)에
-                    따른 맞춤형 트리 분석 결과를 제공합니다. 특히 뷰포트 외부에{" "}
-                    가상 렌더링 영역을 설계하여, 현재 화면과 관계없이 인스타그램
-                    스토리 규격(9:16)에 맞춘 고해상도 합성 이미지를 추출 및
-                    다운로드할 수 있는 환경을 구축했습니다.
-                  </p>
+                  <div className="w-full">
+                    <p className="text-[1rem] md:text-[1.15rem] leading-[1.8] text-[#3D3D3D] bg-gray-50 p-4 md:p-6 rounded-xl">
+                      OpenAI GPT-4o API를 연동하여 사용자의
+                      선택(순한맛/매운맛)에 따른 맞춤형 트리 분석 결과를
+                      제공합니다. 특히 뷰포트 외부에 가상 렌더링 영역을
+                      설계하여, 현재 화면과 관계없이 인스타그램 스토리
+                      규격(9:16)에 맞춘 고해상도 합성 이미지를 추출 및
+                      다운로드할 수 있는 환경을 구축했습니다.
+                    </p>
+                  </div>
                 </div>
               ),
             },
@@ -177,8 +217,12 @@ const GatherTree = () => {
               title: "GA4 기반 데이터 분석 및 사용자 지표 최적화",
               content: (
                 <div>
-                  <img src={tree_GA} alt="GA4 분석 결과 대시보드" />
-                  <p>
+                  <img
+                    src={tree_GA}
+                    alt="GA4 분석 결과 대시보드"
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <p className="text-[0.95rem] md:text-[1.1rem]">
                     서비스의 확산력을 객관적으로 검증하기 위해 Google Analytics
                     4(GA4)를 연동하여 실사용자 지표를 추적 했습니다. 이벤트
                     기간(3일) 동안 193명의 활성 사용자를 기록했으며, 유입된 모든
@@ -196,8 +240,8 @@ const GatherTree = () => {
         />
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <BsFillLightningFill />
           트러블 슈팅
         </div>
@@ -375,15 +419,15 @@ const GatherTree = () => {
         />
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2 ">
+      <div className="px-5 md:mx-[6rem] my-[2rem] pb-[4rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <RiTreeFill />
           결과 화면
         </div>
         <video
           src={tree_video}
           controls
-          className="w-full h-[450px] rounded-xl mb-[3rem]"
+          className="w-full h-auto max-h-[300px] md:max-h-[450px] rounded-xl shadow-md"
         />
       </div>
       <p> </p>

@@ -28,28 +28,29 @@ const Gt = () => {
 
   return (
     <div>
-      <div className="px-[3rem] pt-[4rem] flex items-center justify-between">
+      <div className="px-4 md:px-[3rem] pt-[4rem] flex items-center justify-between">
         <div className="flex items-center">
           <img
             src={back}
             onClick={() => nav(-1)}
-            className="cursor-pointer w-[2.3rem]"
+            className="cursor-pointer w-[1.8rem] md:w-[2.3rem]"
           />
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="text-[2.4rem] font-bold mr-[1rem]">신뢰장터</div>
-          <img src={reactlogo} className="w-[1.5rem]" />
-          <img src={jslogo} className="w-[1.5rem]" />
+          <div className="text-[1.5rem] md:text-[2.4rem] font-bold mr-[0.5rem] md:mr-[1rem]">
+            신뢰장터
+          </div>
+          <img src={reactlogo} className="w-[1.2rem] md:w-[1.5rem]" />
+          <img src={jslogo} className="w-[1.2rem] md:w-[1.5rem]" />
         </div>
-
-        <div className="w-[2rem]"></div>
+        <div className="w-[1.8rem] md:w-[2rem]"></div>
       </div>
 
       <div className="text-center text-[#A4A4A4] text-[1.3rem]">
         2024-03 ~ 2024-11
       </div>
-      <div className="mx-[6rem] my-[2rem] text-[#303030] text-[1.3rem]">
+      <div className="px-5 md:mx-[6rem] my-[2rem] text-[#303030] text-[1rem] md:text-[1.3rem] leading-relaxed">
         C2C 중고 물품의 가격을 예측하고 시각적으로 추천 범위를 제공하는 웹
         서비스입니다. <br />
         머신러닝 모델을 활용하여 입력된 상품의 상태와 카테고리를 기반으로
@@ -57,9 +58,9 @@ const Gt = () => {
         높이고 거래를 활성화하는 데 목적을 두었습니다.
       </div>
 
-      <div className="mx-[6rem] text-[1.3rem]">
-        <div className="flex items-center gap-[2rem]">
-          <p>참여 인원</p>
+      <div className="px-5 md:mx-[6rem] text-[1rem] md:text-[1.3rem]">
+        <div className="flex items-center gap-[1rem] md:gap-[2rem]">
+          <p className="min-w-[4rem]">참여 인원</p>
           <p className="text-[#3D3D3D]">4명 (FE 1, BE 2, ML 1)</p>
         </div>
         <div className="flex items-start gap-[2rem] my-[1rem]">
@@ -82,15 +83,15 @@ const Gt = () => {
           </ul>
         </div>
       </div>
-      <hr className="mx-[6rem] border-t-1 border-gray-300 my-[3rem]" />
+      <hr className="mx-5 md:mx-[6rem] border-t-1 border-gray-300 my-[2rem] md:my-[3rem]" />
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <IoMdLeaf />
           담당 역할 및 기여
         </div>
 
-        <ul className="list-disc pl-5 m-0 leading-[2.7rem] text-[1.3rem] text-[#303030] marker:text-[#679258]">
+        <ul className="list-disc pl-5 m-0 leading-[2rem] md:leading-[2.7rem] text-[1rem] md:text-[1.3rem] text-[#303030] marker:text-[#679258]">
           <li>프론트엔드 개발 담당 (UI/UX 설계 및 구현 전반)</li>
           <li>데이터 수집·가공 참여, 머신러닝 모델 개발 방향 제시</li>
           <li>백엔드 및 머신러닝 API 연동, 데이터 흐름·통신 조율</li>
@@ -101,8 +102,8 @@ const Gt = () => {
         </ul>
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <FaLightbulb />
           주요 기능 상세 구현
         </div>
@@ -112,7 +113,10 @@ const Gt = () => {
               title: "머신러닝 기반 가격 추천 시스템 연동",
               content: (
                 <div>
-                  <img src={gt_1} />
+                  <img
+                    src={gt_1}
+                    className="w-full h-auto rounded-lg mb-4 shadow-sm"
+                  />
                   <p>
                     상품 상태와 카테고리를 입력받아, 머신러닝 모델의 API와
                     연동하여 실시간으로 예측 가격 범위를 제공합니다. React에서
@@ -127,7 +131,10 @@ const Gt = () => {
               title: "상품 등록 및 이미지 관리",
               content: (
                 <div>
-                  <img src={gt_3} />
+                  <img
+                    src={gt_3}
+                    className="w-full h-auto rounded-lg mb-4 shadow-sm"
+                  />
                   <p>
                     FileReader API를 통해 업로드된 이미지를 즉시 미리보기하며,
                     localStorage를 사용해 새로 고침 시에도 임시 저장을
@@ -143,7 +150,10 @@ const Gt = () => {
               title: "다양한 상품 정보 탐색",
               content: (
                 <div>
-                  <img src={gt_2} />
+                  <img
+                    src={gt_2}
+                    className="w-full h-auto rounded-lg mb-4 shadow-sm"
+                  />
                   <p>
                     컴포넌트 마운트 시 axios와 useEffect를 활용해 상품 데이터를
                     비동기 호출하며, useState로 로딩 및 에러 상태를
@@ -160,8 +170,8 @@ const Gt = () => {
         />
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <BsFillLightningFill />
           트러블 슈팅
         </div>
@@ -249,24 +259,24 @@ const Gt = () => {
         />
       </div>
 
-      <div className="mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.5rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <RiTreeFill />
           결과 화면
         </div>
         <video
           src={gt_video}
           controls
-          className="w-full h-[450px] rounded-xl"
+          className="w-full h-auto max-h-[450px] rounded-xl shadow-md"
         />
       </div>
 
-      <div className="mx-[6rem] mt-[2rem] pb-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.8rem] mb-[1rem] flex items-center gap-2">
+      <div className="px-5 md:mx-[6rem] mt-[2rem] pb-[4rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <PiPencilSimpleFill />
           기획 자료
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4 md:gap-6">
           <img
             src={notion}
             alt="노션"
@@ -294,7 +304,7 @@ const Gt = () => {
         </div>
 
         {showFigma && (
-          <div className="w-full h-[40rem] rounded-xl overflow-hidden mt-[2rem]">
+          <div className="w-full h-[25rem] md:h-[40rem] rounded-xl overflow-hidden mt-[2rem]">
             <iframe
               src="https://embed.figma.com/design/YLuwUZKGne2PvO8HilCw54/GT?node-id=0-1&embed-host=share"
               className="w-full h-full"

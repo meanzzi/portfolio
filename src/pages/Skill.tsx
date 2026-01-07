@@ -15,11 +15,12 @@ import NodeJs from "../assets/Node.js.svg";
 
 const Skill = () => {
   return (
-    <div id="skills">
-      <div className="font-sora text-[3rem] text-center mt-[5rem] mb-[6rem] text-[#679258]">
+    <div id="skills" className="py-[3rem] md:py-[5rem]">
+      <div className="font-sora text-[2rem] md:text-[3rem] text-center mb-[3rem] md:mb-[6rem] text-[#679258] font-bold">
         SKILLS
       </div>
-      <div className="flex flex-wrap justify-start gap-[2rem]">
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-[2rem] justify-items-center">
         <SkillCard img={HTML5} alt="HTML5" description="웹표준·시맨틱 마크업" />
         <SkillCard img={CSS3} alt="CSS3" description={"반응형 UI \n구현"} />
         <SkillCard
