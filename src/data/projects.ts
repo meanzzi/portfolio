@@ -20,7 +20,7 @@ export const projects: Project[] = [
     name: "신뢰장터",
     tag: "Team",
     date: "2024-03 ~ 2024-11",
-    description: "C2C 중고 물품 가격 예측 웹서비스",
+    description: "중고 물품 가격 추천 웹서비스",
   },
   {
     id: 2,

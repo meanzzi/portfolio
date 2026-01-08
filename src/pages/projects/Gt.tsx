@@ -73,13 +73,27 @@ const Gt = () => {
             }
           />
         </div>
+        <div className="flex items-start gap-[2rem] my-[1rem]">
+          <p>핵심 기술</p>
+          Axios Interceptor, JWT, FormData, ML API Integration
+        </div>
         <div className="flex items-start gap-[2rem]">
-          <p>주요 기능</p>
+          <p>핵심 성과</p>
           <ul className="text-[#3D3D3D] list-disc pl-5 m-0 leading-[2.2rem]">
-            <li>머신러닝 기반 상품 가격 예측 및 추천</li>
-            <li>직관적인 상품 검색 및 필터링</li>
-            <li>안정적인 상품 등록 및 관리</li>
-            <li>JWT 기반 사용자 인증 및 권한 관리</li>
+            <li>
+              머신러닝 예측 가격 데이터를 <strong>슬라이더 UI로 시각화</strong>
+              하여 사용자 신뢰도 및 거래 편의성 향상
+            </li>
+            <li>
+              {" "}
+              <strong>Axios 인터셉터</strong>를 통한 중앙 집중형 인증 관리로 JWT
+              보안 및 세션 유지 로직 최적화
+            </li>
+            <li>
+              {" "}
+              <strong>FormData 전송 방식</strong> 도입으로 대용량 이미지 업로드
+              실패율 0% 달성 및 전송 속도 개선
+            </li>
           </ul>
         </div>
       </div>
@@ -92,13 +106,11 @@ const Gt = () => {
         </div>
 
         <ul className="list-disc pl-5 m-0 leading-[2rem] md:leading-[2.7rem] text-[1rem] md:text-[1.3rem] text-[#303030] marker:text-[#679258]">
-          <li>프론트엔드 개발 담당 (UI/UX 설계 및 구현 전반)</li>
-          <li>데이터 수집·가공 참여, 머신러닝 모델 개발 방향 제시</li>
-          <li>백엔드 및 머신러닝 API 연동, 데이터 흐름·통신 조율</li>
+          <li>프론트엔드 전 과정 주도</li>
           <li>
-            Git 기반 버전 관리 및 코드 리뷰 참여, Google Sheets로 API 명세 및
-            일정 관리
+            프론트-백-ML 간의 데이터 흐름 설계 및 API 인터페이스 조율 주도
           </li>
+          <li>Git 기반 버전 관리 및 Notion/Google Sheets를 활용한 일정 준수</li>
         </ul>
       </div>
 
@@ -110,7 +122,7 @@ const Gt = () => {
         <Accordion
           items={[
             {
-              title: "머신러닝 기반 가격 추천 시스템 연동",
+              title: "실시간 가격 피드백",
               content: (
                 <div>
                   <img
@@ -118,17 +130,14 @@ const Gt = () => {
                     className="w-full h-auto rounded-lg mb-4 shadow-sm"
                   />
                   <p>
-                    상품 상태와 카테고리를 입력받아, 머신러닝 모델의 API와
-                    연동하여 실시간으로 예측 가격 범위를 제공합니다. React에서
-                    useState와 비동기 API 호출을 활용하여 가격 범위를 슬라이더로
-                    시각화하고, 입력 가격의 적절성을 즉각 피드백하여 사용자
-                    신뢰도를 높였습니다.
+                    비동기 API 호출과 useState를 연동하여 입력값에 따른 가격
+                    적정성을 실시간 슬라이더로 피드백
                   </p>
                 </div>
               ),
             },
             {
-              title: "상품 등록 및 이미지 관리",
+              title: "데이터 영속성 관리",
               content: (
                 <div>
                   <img
@@ -136,18 +145,14 @@ const Gt = () => {
                     className="w-full h-auto rounded-lg mb-4 shadow-sm"
                   />
                   <p>
-                    FileReader API를 통해 업로드된 이미지를 즉시 미리보기하며,
-                    localStorage를 사용해 새로 고침 시에도 임시 저장을
-                    유지했습니다. JWT 토큰을 Authorization 헤더에 포함시켜
-                    인증된 상태로 fetch API를 통해 상품 등록 요청을 보내고,
-                    머신러닝 추천 가격과 비교해 시각적 피드백을 제공하여
-                    사용자의 합리적 가격 설정을 지원했습니다.
+                    FileReader로 이미지 미리보기를 구현하고, localStorage를
+                    활용해 새로고침 시에도 입력 폼 데이터 유지
                   </p>
                 </div>
               ),
             },
             {
-              title: "다양한 상품 정보 탐색",
+              title: "지능형 상품 탐색",
               content: (
                 <div>
                   <img
@@ -155,13 +160,8 @@ const Gt = () => {
                     className="w-full h-auto rounded-lg mb-4 shadow-sm"
                   />
                   <p>
-                    컴포넌트 마운트 시 axios와 useEffect를 활용해 상품 데이터를
-                    비동기 호출하며, useState로 로딩 및 에러 상태를
-                    관리했습니다. useParams로 URL에서 상품 ID를 추출해 상세
-                    정보를 요청하고, 클라이언트 측 필터링과 가격 추천 범위 내
-                    상품에 시각적 체크 아이콘 표시로 사용자 편의를
-                    극대화했습니다. 또한, localStorage에 저장된 이미지를 불러와
-                    상세 페이지에 렌더링하며 사용자 경험을 향상시켰습니다.
+                    useParams 기반 동적 라우팅과 클라이언트 측 필터링을 통해
+                    추천 범위 내 상품에 시각적 강조
                   </p>
                 </div>
               ),
@@ -178,13 +178,13 @@ const Gt = () => {
         <Accordion
           items={[
             {
-              title: "JWT 토큰 유효성 관리 및 사용자 접근 제어",
+              title: "Axios 인터셉터 기반의 JWT 중앙 관리 및 인증 만료 자동화",
               content: (
                 <div className="text-[#303030]">
-                  <div className="">
+                  <div>
                     <p>
-                      페이지 새로고침 시 로그인 상태가 유실되고, 만료된 토큰으로
-                      불필요한 API 요청이 발생했습니다.
+                      페이지 새로고침 시 로그인 상태 유실 및 만료된 토큰으로
+                      인한 불필요한 API 요청 발생
                     </p>
                   </div>
 
@@ -192,35 +192,32 @@ const Gt = () => {
                     <p className="text-[#000000]">해결 과정</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
                       <li>
-                        토큰 유효성 검사 함수 구현 → sessionStorage와 만료시간
-                        체크
+                        <code>sessionStorage</code>와 만료 시간 체크 로직을
+                        결합한 유효성 검사 함수 구현
                       </li>
                       <li>
-                        axios 인터셉터 설정 → 모든 요청에 JWT 자동 추가, 401
-                        발생 시 자동 로그아웃
+                        Axios Interceptor를 설정하여 모든 요청에 JWT를 자동으로
+                        부착하고, 401 에러 발생 시 자동 로그아웃 처리
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>새로고침 시 로그인 유지, 만료 토큰 자동 로그아웃</li>
-                      <li>프론트엔드에서 인증/인가 상태 관리 중요성 이해</li>
-                    </ul>
+                    <p className="text-[#000000]">결과</p>
+                    사용자 인증 상태 유지의 안정성 확보 및 프론트엔드 측 보안
+                    로직 강화
                   </div>
                 </div>
               ),
             },
             {
-              title: "FormData 기반 안정적인 이미지 업로드 및 미리보기",
+              title: "FormData 및 Blob URL 활용을 통한 이미지 전송 최적화",
               content: (
                 <div className="text-[#303030]">
                   <div className="">
                     <p>
-                      상품 등록 시 이미지를 Base64로 변환해 JSON에 포함시키는
-                      방식으로 전송했으나 대용량 이미지에서 전송 실패와 성능
-                      저하 문제가 발생했습니다.
+                      이미지를 Base64로 변환하여 JSON에 포함 시, 대용량 파일에서
+                      전송 실패 및 브라우저 성능 저하 발생
                     </p>
                   </div>
 
@@ -228,29 +225,23 @@ const Gt = () => {
                     <p className="text-[#000000]">해결 과정</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
                       <li>
-                        FormData를 활용해 multipart/form-data 방식으로 전송
+                        FormData를 활용해 multipart/form-data 전송 방식으로
+                        전환하여 페이로드 최적화
                       </li>
                       <li>
-                        URL.createObjectURL을 통한 즉시 미리보기, 서버 전송 시만
-                        File 사용
+                        <code>URL.createObjectURL</code>을 통한 즉시 미리보기
+                        구현으로 메모리 효율 개선
                       </li>
                       <li>
-                        AWS S3에 이미지 저장, DB에는 URL만 저장하는 구조로
-                        백엔드와 협의
+                        S3 저장 구조로 백엔드와 협의하여 DB 부하 감소 유도
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>
-                        안정적이고 효율적인 이미지 업로드 구현으로 사용자 경험
-                        개선
-                      </li>
-                      <li>FormData 및 미리보기 최적화에 대한 이해 강화</li>
-                      <li>프론트·백엔드 협업 과정에서 문제 해결 능력 향상</li>
-                    </ul>
+                    <p className="text-[#000000]">결과</p>
+                    안정적인 업로드 환경 구축 및 서버-클라이언트 간 효율적인
+                    인터페이스 설계 역량 습득
                   </div>
                 </div>
               ),

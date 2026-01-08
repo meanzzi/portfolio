@@ -4,6 +4,7 @@ import back from "../../assets/back.svg";
 import reactlogo from "../../assets/React.svg";
 import jslogo from "../../assets/JavaScript.svg";
 import vitelogo from "../../assets/Vite.js.svg";
+import csslogo from "../../assets/CSS3.svg";
 import gitgray from "../../assets/github_gray.svg";
 
 import tree_video from "../../assets/tree_video.mp4";
@@ -42,6 +43,7 @@ const GatherTree = () => {
           <img src={reactlogo} className="w-[1.2rem] md:w-[1.5rem]" />
           <img src={jslogo} className="w-[1.2rem] md:w-[1.5rem]" />
           <img src={vitelogo} className="w-[1.2rem] md:w-[1.5rem]" />
+          <img src={csslogo} className="w-[1.2rem] md:w-[1.5rem]" />
         </div>
 
         <div className="w-[1.8rem] md:w-[2rem]"></div>
@@ -74,15 +76,29 @@ const GatherTree = () => {
             }
           />
         </div>
+        <div className="flex items-start gap-[2rem] my-[1rem]">
+          <p>핵심 기술</p>
+          Nes.css (Retro UI), Canvas API, Linear Interpolation, GA4 Analytics,
+          GPT-4o Vision
+        </div>
         <div className="flex items-start gap-[2rem]">
-          <p>주요 기능</p>
+          <p>핵심 성과</p>
           <ul className="text-[#3D3D3D] list-disc pl-5 m-0 leading-[2.2rem]">
-            <li>사용자 참여형 Canvas 인터랙션 (픽셀 아트)</li>
-            <li>URL 기반의 간편한 협업 및 공유 프로세스</li>
             <li>
-              OpenAI API를 활용한 맞춤형 트리 분석 및 제목 생성 (순한맛/매운맛)
+              <strong>선형 보간 알고리즘</strong>을 적용하여 브라우저 이벤트
+              샘플링 한계로 인한 <strong>드로잉 끊김 문제를 해결</strong>하고
+              매끄러운 UX 제공
             </li>
-            <li>가벼운 웹 환경을 지향하는 최적화된 이벤트 페이지</li>
+            <li>
+              GA4 분석 결과,{" "}
+              <strong>이벤트 기간 내 활성 전환율 100% 및 참여율 94.12%</strong>
+              를 기록하며 직관적인 UI 설계의 유효성을 정량적으로 증명
+            </li>
+            <li>
+              <strong>Hidden Layer</strong>를 활용해 서비스 화면과 별개인{" "}
+              <strong>9:16 비율의 인스타그램 스토리용 이미지 추출 기능</strong>
+              을 구현
+            </li>
           </ul>
         </div>
       </div>
@@ -100,8 +116,8 @@ const GatherTree = () => {
             레이어 합성, 초기화 기능을 포함한 편집 시스템 구축
           </li>
           <li>
-            데이터 통신 및 상태 관리: Axios를 활용하여 트리/장식 데이터의 CRUD를
-            구현하고, 비회원 기반의 UUID 식별 로직 처리
+            데이터 통신 및 상태 관리: 비회원 기반 UUID 식별 로직을 처리하고
+            트리/장식 데이터의 CRUD 파이프라인 설계
           </li>
           <li>
             AI 분석 결과 시각화: OpenAI API 응답 데이터를 가공하여 트리 이미지와
@@ -122,7 +138,7 @@ const GatherTree = () => {
         <Accordion
           items={[
             {
-              title: "커스텀 픽셀 아트 편집 및 레이어 시스템",
+              title: "픽셀 아트 편집 및 레이어 시스템",
               content: (
                 <div className="flex flex-col gap-6">
                   <div className="flex gap-4 justify-center items-center w-full">
@@ -140,19 +156,16 @@ const GatherTree = () => {
 
                   <div className="w-full">
                     <p className="text-[1rem] md:text-[1.15rem] leading-[1.8] text-[#3D3D3D] bg-gray-50 p-4 md:p-6 rounded-xl">
-                      HTML5 Canvas API를 활용하여 160×192(트리), 32×32(장식)
-                      규격의 픽셀 편집기를 구현했습니다. 단순 드로잉을 넘어 기본
-                      트리 이미지와 사용자 드로잉 레이어를 비동기 파이프라인으로
-                      합성하는 시스템을 구축했으며, 선형 보간 알고리즘을 적용해
-                      빠른 마우스 이동 시에도 선이 끊기지 않는 매끄러운 드로잉
-                      경험을 제공했습니다.
+                      160×192(트리), 32×32(장식) 규격의 편집기를 구현하고, 기본
+                      가이드와 사용자 드로잉을 비동기( <code>img.decode()</code>{" "}
+                      )로 합성하는 시스템 구축
                     </p>
                   </div>
                 </div>
               ),
             },
             {
-              title: "비회원 공유 시스템 및 수학적 좌표 매핑",
+              title: "수학적 좌표 매핑",
               content: (
                 <div className="flex flex-col gap-6">
                   <div className="flex gap-4 justify-center items-center w-full">
@@ -170,21 +183,17 @@ const GatherTree = () => {
 
                   <div className="w-full">
                     <p className="text-[1rem] md:text-[1.15rem] leading-[1.8] text-[#3D3D3D] bg-gray-50 p-4 md:p-6 rounded-xl">
-                      별도의 회원가입 없이 UUID 식별자가 포함된 URL로 트리
-                      주인과 참여자의 권한을 동적으로 분기하여 접근성을
-                      높였습니다. 특히 트리의 피라미드 구조를 고려해 센터 정렬
-                      및 행별 좌표 산출 공식을 직접 설계했습니다. 10개의 고정
-                      슬롯 좌표를 수학적으로 계산하고, 트리 주인이 장식 순서를
-                      변경할 때마다 데이터의 인덱스를 좌표 배열에 실시간
-                      매핑하여 별도의 레이아웃 수정 없이도 트리가 즉각적으로
-                      재구성되도록 구현했습니다.
+                      트리의 피라미드 구조를 고려한{" "}
+                      <strong>슬롯 좌표 산출 공식</strong>을 직접 설계하여,
+                      데이터 인덱스에 따라 장식이 실시간으로 정렬되는 동적
+                      재구성 로직 구현
                     </p>
                   </div>
                 </div>
               ),
             },
             {
-              title: "AI 멀티 페르소나 평가 및 SNS 최적화 공유",
+              title: "AI 멀티 페르소나 평가 및 SNS 공유",
               content: (
                 <div className="flex flex-col gap-6">
                   <div className="flex gap-4 justify-center items-center w-full">
@@ -202,12 +211,9 @@ const GatherTree = () => {
 
                   <div className="w-full">
                     <p className="text-[1rem] md:text-[1.15rem] leading-[1.8] text-[#3D3D3D] bg-gray-50 p-4 md:p-6 rounded-xl">
-                      OpenAI GPT-4o API를 연동하여 사용자의
-                      선택(순한맛/매운맛)에 따른 맞춤형 트리 분석 결과를
-                      제공합니다. 특히 뷰포트 외부에 가상 렌더링 영역을
-                      설계하여, 현재 화면과 관계없이 인스타그램 스토리
-                      규격(9:16)에 맞춘 고해상도 합성 이미지를 추출 및
-                      다운로드할 수 있는 환경을 구축했습니다.
+                      GPT-4o API를 연동한 맞춤형 평가 결과를 제공하고, 뷰포트
+                      외부 가상 영역을 활용해 인스타그램 스토리 규격에 최적화된
+                      결과물 생성
                     </p>
                   </div>
                 </div>
@@ -224,14 +230,10 @@ const GatherTree = () => {
                   />
                   <p className="text-[0.95rem] md:text-[1.1rem]">
                     서비스의 확산력을 객관적으로 검증하기 위해 Google Analytics
-                    4(GA4)를 연동하여 실사용자 지표를 추적 했습니다. 이벤트
-                    기간(3일) 동안 193명의 활성 사용자를 기록했으며, 유입된 모든
-                    사용자가 실제 상호작용으로 이어지는{" "}
-                    <strong>활성 전환율 100%</strong>와{" "}
-                    <strong>94.12%의 높은 참여율</strong>을 달성했습니다. 이를
-                    통해 Direct 및 Social 채널 중심의 유입 구조를 파악하고,
-                    직관적인 UI/UX 설계가 사용자 이탈 방지와 전환에 미치는
-                    긍정적인 영향을 데이터로 확인하는 경험을 쌓았습니다.
+                    4(GA4)를 연동하여 실사용자 지표를 추적. 기간(3일) 동안
+                    193명의 활성 사용자를 기록했으며, 유입된 모든 사용자가 실제
+                    상호작용으로 이어지는 <strong>활성 전환율 100%</strong>와{" "}
+                    <strong>94.12%의 높은 참여율</strong>을 달성
                   </p>
                 </div>
               ),
@@ -253,71 +255,53 @@ const GatherTree = () => {
                 <div className="text-[#303030]">
                   <div className="">
                     <p>
-                      마우스를 빠르게 움직일 경우, mousemove 이벤트 샘플링
-                      한계로 인해 선이 끊긴 점 형태로 그려지는 현상이
-                      발생했습니다.
+                      마우스 이동 속도가 빠를 때 mousemove 이벤트 호출 간격으로
+                      인해 선이 끊긴 점 형태로 그려지는 문제 발생
                     </p>
                   </div>
 
                   <div className="my-[1.5rem]">
                     <p className="text-[#000000]">해결 과정</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      이전 좌표와 현재 좌표 사이의 거리를 계산하는 선형
-                      보간(Linear Interpolation) 알고리즘 적용하였습니다.
-                      mousemove 이벤트 사이의 공백을 수학적으로 계산된 좌표로
-                      채워 넣는 drawLine 로직을 구현하여 끊김 없는 드로잉 환경을
-                      구축하였습니다.
+                      이전 좌표와 현재 좌표 사이의 거리를 계산하여 빈 공백을
+                      수학적으로 채워 넣는{" "}
+                      <strong>선형 보간(Linear Interpolation) 알고리즘</strong>{" "}
+                      적용
                     </ul>
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
+                    <p className="text-[#000000]">결과</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      하드웨어 및 브라우저의 성능 한계를 알고리즘적 사고로
-                      극복하여 사용자 경험을 개선했습니다.
+                      하드웨어 성능 한계를 알고리즘적 사고로 극복하여 끊김 없는
+                      부드러운 드로잉 환경 구축
                     </ul>
                   </div>
                 </div>
               ),
             },
             {
-              title: "CORS 정책 대응을 통한 Canvas 오염 문제 해결",
+              title: "CORS 정책 대응을 통한 Canvas 오염(Tainted) 문제 해결",
               content: (
                 <div className="text-[#303030]">
                   <div className="">
                     <p>
-                      브라우저에서 S3로 이미지를 직접 업로드한 뒤 해당 이미지를
-                      다시 불러와 Canvas에 렌더링하여 캡처하는 과정에서 CORS
-                      정책으로 인해 Canvas가 Tainted 상태가 되어 저장이 차단되는
-                      문제가 발생했습니다.
+                      S3에서 불러온 이미지를 Canvas에 렌더링 후 캡처 시,
+                      브라우저 보안 정책(CORS)으로 인해 저장 기능이 차단되는
+                      문제 발생
                     </p>
                   </div>
 
                   <div className="my-[1.5rem]">
                     <p className="text-[#000000]">해결 과정</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>
-                        백엔드와 협업하여 S3 버킷 CORS Policy를 명확히 설정
-                        (AllowedOrigins, AllowedMethods 등)
-                      </li>
-                      <li>
-                        이미지 로드 시 crossOrigin="anonymous" 속성을 명시하여
-                        보안 컨텍스트 내에서 리소스를 정상적으로 로드
-                      </li>
-                    </ul>
+                    S3 버킷의 CORS Policy를 설정하고, 이미지 로드 시
+                    <code>crossOrigin="anonymous"</code> 속성을 명시하여 보안
+                    컨텍스트 내 리소스 로드 허용
                   </div>
 
                   <div>
                     <p className="text-[#000000]">결과 및 배운 점</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>
-                        Canvas 오염 문제 없이 이미지 캡처 및 저장 기능 정상 동작
-                      </li>
-                      <li>
-                        프론트엔드에서도 클라우드 리소스를 다룰 때 보안 정책과
-                        브라우저 동작을 함께 고려해야 함을 경험
-                      </li>
-                    </ul>
+                    캔버스 오염 없이 정상적인 이미지 캡처 및 저장 기능 구현
                   </div>
                 </div>
               ),
@@ -328,9 +312,8 @@ const GatherTree = () => {
                 <div className="text-[#303030]">
                   <div className="">
                     <p>
-                      초기에는 빈 캔버스에 트리를 직접 그리는 방식이었으나 QA
-                      과정에서 “시작이 어렵다”, “되돌릴 수 없다”는 피드백을
-                      받았습니다.
+                      "시작이 어렵다", "되돌릴 수 없다"는 피드백을 바탕으로
+                      사용자 심리적 허들 감소 필요성 확인
                     </p>
                   </div>
 
@@ -344,10 +327,9 @@ const GatherTree = () => {
                         순차적으로 합성
                       </li>
                       <li>
-                        <strong>선언적 상태 초기화:</strong> Canvas 내부 API를
-                        수동으로 조작하는 대신, React의 <code>key</code> 속성을
-                        변경하여 컴포넌트를 재마운트 시키는 방식으로 초기화 로직
-                        단순화
+                        <strong>선언적 상태 초기화:</strong> React의{" "}
+                        <code>key</code> 속성을 변경하여 컴포넌트를 재마운트
+                        시키는 방식으로 초기화 로직 단순화
                       </li>
                       <li>
                         <strong>픽셀 아트 스타일 최적화:</strong>{" "}
@@ -359,7 +341,7 @@ const GatherTree = () => {
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
+                    <p className="text-[#000000]">결과</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
                       <li>
                         트리 복구 기능 도입으로 드로잉 실패에 대한 사용자 심리적
@@ -379,38 +361,27 @@ const GatherTree = () => {
               ),
             },
             {
-              title: "사용자 맞춤형 결과물 공유 캡처 환경 구축",
+              title: "캡처 전용 Hidden 영역 설계를 통한 결과물 공유 최적화",
               content: (
                 <div className="text-[#303030]">
                   <div className="">
                     <p>
-                      실제 웹 화면과 공유용 결과 이미지(9:16 인스타그램 스토리
-                      비율)의 레이아웃이 달라 일반적인 캡처 방식으로는 해결이
-                      불가능했습니다.
+                      웹 화면의 레이아웃과 인스타그램 스토리용(9:16) 공유 이미지
+                      레이아웃이 달라 일반 캡처가 불가능한 상황
                     </p>
                   </div>
 
                   <div className="my-[1.5rem]">
                     <p className="text-[#000000]">해결 과정</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>Viewport 밖에 캡처 전용 Hidden 렌더링 영역 설계</li>
-                      <li>트리 장식 좌표 및 AI 텍스트를 해당 영역에 재배치</li>
-                      <li> html2canvas를 사용해 고해상도 PNG 추출</li>
-                    </ul>
+                    뷰포트 밖에 <strong>캡처 전용 가상 렌더링 영역</strong>을
+                    설계하고 트리 데이터와 AI 텍스트를 재배치하여 고해상도 PNG
+                    추출
                   </div>
 
                   <div>
                     <p className="text-[#000000]">결과 및 배운 점</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>
-                        실제 화면과 무관하게 공유에 최적화된 결과 이미지 생성
-                        가능
-                      </li>
-                      <li>
-                        사용자에게 보여지는 화면과 데이터로 저장되는 화면을
-                        분리하는 ‘가상 렌더링 캐싱’ 개념을 실무적으로 경험
-                      </li>
-                    </ul>
+                    실제 화면과 무관하게 공유에 최적화된 결과물 생성이 가능한
+                    '가상 렌더링 캐싱' 환경 구축
                   </div>
                 </div>
               ),
