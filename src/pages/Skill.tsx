@@ -10,8 +10,6 @@ import Git from "../assets/Git.svg";
 import GitHub from "../assets/GitHub.svg";
 import Postman from "../assets/Postman.svg";
 import AWS from "../assets/AWS.svg";
-import MySQL from "../assets/MySQL.svg";
-import NodeJs from "../assets/Node.js.svg";
 
 const Skill = () => {
   return (
@@ -45,11 +43,9 @@ const Skill = () => {
         <SkillCard
           img={Postman}
           alt="Postman"
-          description="API 테스트, 디버깅"
+          description="API 요청·응답 확인"
         />
-        <SkillCard img={AWS} alt="AWS" description={"클라우드 \n배포 경험"} />
-        <SkillCard img={MySQL} alt="MySQL" description="데이터 연동 경험" />
-        <SkillCard img={NodeJs} alt="NodeJs" description={"서버 환경 \n이해"} />
+        <SkillCard img={AWS} alt="AWS" description={"배포 환경 이해"} />
       </div>
     </div>
   );
