@@ -300,7 +300,7 @@ const GatherTree = () => {
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
+                    <p className="text-[#000000]">결과</p>
                     캔버스 오염 없이 정상적인 이미지 캡처 및 저장 기능 구현
                   </div>
                 </div>
@@ -379,7 +379,7 @@ const GatherTree = () => {
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
+                    <p className="text-[#000000]">결과</p>
                     실제 화면과 무관하게 공유에 최적화된 결과물 생성이 가능한
                     '가상 렌더링 캐싱' 환경 구축
                   </div>

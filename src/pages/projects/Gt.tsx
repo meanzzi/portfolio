@@ -75,7 +75,7 @@ const Gt = () => {
         </div>
         <div className="flex items-start gap-[2rem] my-[1rem]">
           <p>핵심 기술</p>
-          Axios Interceptor, JWT, FormData, ML API Integration
+          Axios Interceptor, JWT, FormData, ML 기반 가격 예측 백엔드 API 연동
         </div>
         <div className="flex items-start gap-[2rem]">
           <p>핵심 성과</p>
@@ -211,7 +211,7 @@ const Gt = () => {
               ),
             },
             {
-              title: "FormData 및 Blob URL 활용을 통한 이미지 전송 최적화",
+              title: "FormData 활용을 통한 이미지 전송 최적화",
               content: (
                 <div className="text-[#303030]">
                   <div className="">

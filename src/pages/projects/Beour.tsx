@@ -93,8 +93,9 @@ const Beour = () => {
               <strong>로딩 성능 최적화</strong>
             </li>
             <li>
-              GitHub Actions 기반의 CI/CD를 설계하여 빌드 전 타입 에러 및 린트
-              검증을 자동화하고 <strong>배포 안정성 80% 향상</strong>
+              GitHub Actions 기반의 CI/CD 환경을 활용하여 빌드 및 타입·린트 검증
+              결과를 기준으로 배포 실패 원인·분석·개선, 배포 과정의 안정성
+              체감적으로 향상
             </li>
             <li>
               Kakao Map API 커스터마이징을 통해 마커 오차 보정 및 동적 UI
@@ -207,7 +208,8 @@ const Beour = () => {
         <Accordion
           items={[
             {
-              title: "GitHub Actions 기반 CI/CD 구축을 통한 배포 안정성 확보",
+              title:
+                "GitHub Actions 기반 CI/CD 환경을 활용한 배포 실패 원인 및 분석 개선",
               content: (
                 <div className="text-[#303030]">
                   <div className="">
@@ -219,8 +221,8 @@ const Beour = () => {
                     <p className="text-[#000000]">해결 과정</p>
                     <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
                       <li>
-                        GitHub Actions 워크플로우에 빌드 전 tsc 및 Lint 검증
-                        단계 추가하여 오류 사전 차단
+                        GitHub Actions CI 실행 로그를 기반으로 빌드·타입·린트
+                        오류 원인 분석, 관련 코드 및 타입 정의 수정
                       </li>
                       <li>
                         react, react-dom 등 핵심 라이브러리 버전을 고정하여 환경
@@ -230,9 +232,16 @@ const Beour = () => {
                   </div>
 
                   <div>
-                    <p className="text-[#000000]">결과 및 배운 점</p>
-                    배포 성공률을 획기적으로 높이고 자동화된 코드 품질 관리 체계
-                    마련
+                    <p className="text-[#000000]">결과</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        배포 실패 주요 원인을 제거하여 배포 성공 여부 예측 가능
+                      </li>
+                      <li>
+                        CI 로그 활용한 문제 분석과 수정 과정을 통해 실무적 배포
+                        흐름 이해
+                      </li>
+                    </ul>
                   </div>
                 </div>
               ),
