@@ -9,9 +9,6 @@ import notion from "../../assets/notion.svg";
 import figma from "../../assets/figma.svg";
 import pdf from "../../assets/pdf.svg";
 import gt_video from "../../assets/gt_video.mp4";
-import gt_1 from "../../assets/gt_1.png";
-import gt_2 from "../../assets/gt_2.png";
-import gt_3 from "../../assets/gt_3.jpg";
 import gt_ppt from "../../assets/gt_ppt.pdf";
 
 import { useNavigate } from "react-router-dom";
@@ -51,11 +48,8 @@ const Gt = () => {
         2024-03 ~ 2024-11
       </div>
       <div className="px-5 md:mx-[6rem] my-[2rem] text-[#303030] text-[1rem] md:text-[1.3rem] leading-relaxed">
-        C2C 중고 물품의 가격을 예측하고 시각적으로 추천 범위를 제공하는 웹
-        서비스입니다. <br />
-        머신러닝 모델을 활용하여 입력된 상품의 상태와 카테고리를 기반으로
-        합리적인 가격을 예측하고, 이를 직관적인 UI로 시각화하여 사용자 신뢰를
-        높이고 거래를 활성화하는 데 목적을 두었습니다.
+        머신러닝 기반 가격 예측 결과를 슬라이더 UI로 시각화하여 사용자
+        의사결정을 돕는 C2C 중고거래 웹 서비스
       </div>
 
       <div className="px-5 md:mx-[6rem] text-[1rem] md:text-[1.3rem]">
@@ -73,96 +67,127 @@ const Gt = () => {
             }
           />
         </div>
-        <div className="flex items-start gap-[2rem] my-[1rem]">
-          <p>핵심 기술</p>
-          Axios Interceptor, JWT, FormData, ML 기반 가격 예측 백엔드 API 연동
-        </div>
-        <div className="flex items-start gap-[2rem]">
-          <p>핵심 성과</p>
-          <ul className="text-[#3D3D3D] list-disc pl-5 m-0 leading-[2.2rem]">
-            <li>
-              머신러닝 예측 가격 데이터를 <strong>슬라이더 UI로 시각화</strong>
-              하여 사용자 신뢰도 및 거래 편의성 향상
-            </li>
-            <li>
-              {" "}
-              <strong>Axios 인터셉터</strong>를 통한 중앙 집중형 인증 관리로 JWT
-              보안 및 세션 유지 로직 최적화
-            </li>
-            <li>
-              {" "}
-              <strong>FormData 전송 방식</strong> 도입으로 대용량 이미지 업로드
-              실패율 0% 달성 및 전송 속도 개선
-            </li>
-          </ul>
-        </div>
       </div>
       <hr className="mx-5 md:mx-[6rem] border-t-1 border-gray-300 my-[2rem] md:my-[3rem]" />
 
       <div className="px-5 md:mx-[6rem] my-[2rem]">
-        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
-          <IoMdLeaf />
-          담당 역할 및 기여
+        <div className="leading-[2rem] md:leading-[2.7rem] text-[1rem] md:text-[1.3rem] text-[#303030]">
+          중고 거래에서는 판매자가 책정한 가격이 적정한지 판단하기 어렵다는
+          문제에 주목했습니다. 단순히 머신러닝 예측값을 보여주는 것보다,
+          사용자가 가격의 합리성을 직관적으로 이해하고 스스로 판단할 수 있는
+          구조가 중요하다고 생각했습니다. <br />
+          따라서 예측 결과를 단일 수치가 아닌 범위로 시각화하고, 사용자 입력에
+          따라 실시간 피드백을 제공하는 인터페이스 설계에 집중했습니다.
         </div>
+      </div>
 
-        <ul className="list-disc pl-5 m-0 leading-[2rem] md:leading-[2.7rem] text-[1rem] md:text-[1.3rem] text-[#303030] marker:text-[#679258]">
-          <li>프론트엔드 전 과정 주도</li>
-          <li>
-            프론트-백-ML 간의 데이터 흐름 설계 및 API 인터페이스 조율 주도
-          </li>
-          <li>Git 기반 버전 관리 및 Notion/Google Sheets를 활용한 일정 준수</li>
-        </ul>
+      <hr className="mx-5 md:mx-[6rem] border-t-1 border-gray-300 my-[2rem] md:my-[3rem]" />
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
+          <FaLightbulb />
+          담당 역할
+        </div>
+        <p className="text-[1rem] md:text-[1.3rem] text-[#303030]">
+          프론트엔드 개발 전담
+        </p>
       </div>
 
       <div className="px-5 md:mx-[6rem] my-[2rem]">
         <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
           <FaLightbulb />
-          주요 기능 상세 구현
+          주요 기능
+        </div>
+        <div className="my-[1.5rem]">
+          <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+            <li className="text-[1rem] md:text-[1.3rem] text-[#303030]">
+              <div className="flex flex-col">
+                <span className="font-medium">
+                  예측 가격 반응형 슬라이더 UI
+                </span>
+                <span className=" text-[#303030] ml-1">
+                  ML 모델의 예측값 ± MAE 범위를 시각적으로 표현하고, 사용자 입력
+                  가격이 적정 범위인지 실시간으로 안내
+                </span>
+              </div>
+            </li>
+            <li className="text-[1rem] md:text-[1.3rem] text-[#303030]">
+              상품 등록 및 이미지 업로드 시스템
+            </li>
+            <li className="text-[1rem] md:text-[1.3rem] text-[#303030]">
+              JWT 기반 로그인 및 세션 유지
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="px-5 md:mx-[6rem] my-[2rem]">
+        <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
+          <BsFillLightningFill />
+          문제 및 해결 과정
         </div>
         <Accordion
           items={[
             {
-              title: "실시간 가격 피드백",
+              title: "예측 가격 표현 방식 개선",
               content: (
-                <div>
-                  <img
-                    src={gt_1}
-                    className="w-full h-auto rounded-lg mb-4 shadow-sm"
-                  />
-                  <p>
-                    비동기 API 호출과 useState를 연동하여 입력값에 따른 가격
-                    적정성을 실시간 슬라이더로 피드백
-                  </p>
+                <div className="text-[#303030]">
+                  <div>
+                    <p className="text-[#000000]">문제</p>
+                    <p>
+                      텍스트 기반 가격 범위 표기 방식은 사용자에게 직관적인 판단
+                      기준을 제공하지 못함
+                    </p>
+                  </div>
+
+                  <div className="my-[1.5rem]">
+                    <p className="text-[#000000]">해결</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        가격의 ‘위치’를 시각적으로 전달하기 위해 Range Slider
+                        기반 시각화로 변경
+                      </li>
+                      <li>범위 내/외 상태를 색상으로 구분</li>
+                      <li>동적 스케일 확장 로직 추가</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-[#000000]">결과</p>
+                    ML 결과를 직관적으로 표현하여 사용자 이해도 향상
+                  </div>
                 </div>
               ),
             },
             {
-              title: "데이터 영속성 관리",
+              title: "JWT 인증 구조 개선",
               content: (
-                <div>
-                  <img
-                    src={gt_3}
-                    className="w-full h-auto rounded-lg mb-4 shadow-sm"
-                  />
-                  <p>
-                    FileReader로 이미지 미리보기를 구현하고, localStorage를
-                    활용해 새로고침 시에도 입력 폼 데이터 유지
-                  </p>
-                </div>
-              ),
-            },
-            {
-              title: "지능형 상품 탐색",
-              content: (
-                <div>
-                  <img
-                    src={gt_2}
-                    className="w-full h-auto rounded-lg mb-4 shadow-sm"
-                  />
-                  <p>
-                    useParams 기반 동적 라우팅과 클라이언트 측 필터링을 통해
-                    추천 범위 내 상품에 시각적 강조
-                  </p>
+                <div className="text-[#303030]">
+                  <div>
+                    <p className="text-[#000000]">문제</p>
+                    <p>
+                      API 요청마다 토큰을 직접 관리, 토큰 만료 시 예외 처리 구조
+                      부재
+                    </p>
+                  </div>
+
+                  <div className="my-[1.5rem]">
+                    <p className="text-[#000000]">해결</p>
+                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
+                      <li>
+                        토큰을 중앙에서 관리하여 API 요청 간 인증 상태 일관성
+                        확보
+                      </li>
+                      <li>
+                        401 에러 발생 시 자동 로그아웃 처리 구조 설계, 만료
+                        토큰으로 인한 불필요한 요청 방지
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-[#000000]">결과</p>
+                    인증 흐름 안정화 및 구조 확장 가능성 확보
+                  </div>
                 </div>
               ),
             },
@@ -172,82 +197,26 @@ const Gt = () => {
 
       <div className="px-5 md:mx-[6rem] my-[2rem]">
         <div className="text-[#679258] font-bold text-[1.4rem] md:text-[1.8rem] mb-[1rem] flex items-center gap-2">
-          <BsFillLightningFill />
-          트러블 슈팅
+          <IoMdLeaf />
+          배운 점
         </div>
-        <Accordion
-          items={[
-            {
-              title: "Axios 인터셉터 기반의 JWT 중앙 관리 및 인증 만료 자동화",
-              content: (
-                <div className="text-[#303030]">
-                  <div>
-                    <p>
-                      페이지 새로고침 시 로그인 상태 유실 및 만료된 토큰으로
-                      인한 불필요한 API 요청 발생
-                    </p>
-                  </div>
 
-                  <div className="my-[1.5rem]">
-                    <p className="text-[#000000]">해결 과정</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>
-                        <code>sessionStorage</code>와 만료 시간 체크 로직을
-                        결합한 유효성 검사 함수 구현
-                      </li>
-                      <li>
-                        Axios Interceptor를 설정하여 모든 요청에 JWT를 자동으로
-                        부착하고, 401 에러 발생 시 자동 로그아웃 처리
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="text-[#000000]">결과</p>
-                    사용자 인증 상태 유지의 안정성 확보 및 프론트엔드 측 보안
-                    로직 강화
-                  </div>
-                </div>
-              ),
-            },
-            {
-              title: "FormData 활용을 통한 이미지 전송 최적화",
-              content: (
-                <div className="text-[#303030]">
-                  <div className="">
-                    <p>
-                      이미지를 Base64로 변환하여 JSON에 포함 시, 대용량 파일에서
-                      전송 실패 및 브라우저 성능 저하 발생
-                    </p>
-                  </div>
-
-                  <div className="my-[1.5rem]">
-                    <p className="text-[#000000]">해결 과정</p>
-                    <ul className="list-disc pl-5 marker:text-[#679258] leading-[2.3rem]">
-                      <li>
-                        FormData를 활용해 multipart/form-data 전송 방식으로
-                        전환하여 페이로드 최적화
-                      </li>
-                      <li>
-                        <code>URL.createObjectURL</code>을 통한 즉시 미리보기
-                        구현으로 메모리 효율 개선
-                      </li>
-                      <li>
-                        S3 저장 구조로 백엔드와 협의하여 DB 부하 감소 유도
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="text-[#000000]">결과</p>
-                    안정적인 업로드 환경 구축 및 서버-클라이언트 간 효율적인
-                    인터페이스 설계 역량 습득
-                  </div>
-                </div>
-              ),
-            },
-          ]}
-        />
+        <ul className="list-disc pl-5 m-0 leading-[2rem] md:leading-[2.7rem] text-[1rem] md:text-[1.3rem] text-[#303030] marker:text-[#679258]">
+          <li>
+            ML 예측 결과를 단순 데이터가 아닌 사용자 경험 중심 UI로 해석하는
+            방법을 학습
+          </li>
+          <li>데이터 흐름을 구조적으로 설계한 경험 </li>
+          <li>
+            JWT 기반 인증 구조를 직접 구현하며 토큰 관리 및 예외 처리 흐름 이해
+          </li>
+          <li>
+            API 통신에서 인증 상태에 따른 에러 처리 및 구조 확장의 중요성 인지
+          </li>
+          <li>
+            배포 환경에서 실제 서비스 동작까지 연결하는 전체 파이프라인 경험
+          </li>
+        </ul>
       </div>
 
       <div className="px-5 md:mx-[6rem] my-[2rem]">
@@ -276,7 +245,7 @@ const Gt = () => {
               window.open(
                 "https://www.notion.so/2325a4dbd5e480b08bb7e6d5067b1c5b",
                 "_blank",
-                "noopener,noreferrer"
+                "noopener,noreferrer",
               )
             }
           />

@@ -15,7 +15,7 @@ export default function StartPage({ onFinish }: StartPageProps) {
 
   return (
     <motion.div
-      className="h-screen w-screen flex flex-col items-center justify-center bg-[#679258] text-white"
+      className="h-screen w-screen flex flex-col items-center justify-center bg-[#8bad7f] text-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

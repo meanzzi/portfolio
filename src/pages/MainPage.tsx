@@ -6,7 +6,7 @@ import Skill from "./Skill";
 
 const MainPage = () => {
   return (
-    <div className="bg-[#679258] p-4 md:p-10 lg:px-[10rem] lg:py-[4rem] scroll-smooth min-h-screen">
+    <div className="bg-[#8bad7f] p-4 md:p-10 lg:px-[10rem] lg:py-[4rem] scroll-smooth min-h-screen">
       <div className="bg-white rounded-[1rem] overflow-hidden">
         <Header />
 

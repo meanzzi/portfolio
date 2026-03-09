@@ -31,7 +31,7 @@ const Profile = () => {
           <div className="mt-6 text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] xl:text-[1.4rem] leading-relaxed text-gray-700 break-keep">
             <p>
               안녕하세요! 코드를 통해 사람들과 세상을 연결하는 프론트엔드 개발자
-              <span className="font-bold text-[#679258]"> 김민지</span>입니다.
+              <span className="text-black"> 김민지</span>입니다.
               <br className="hidden xl:block" />
               항상 새로운 기술을 배우고, 더 나은 사용자 경험을 위해 노력하고
               있어요.
